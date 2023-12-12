@@ -1,4 +1,3 @@
-import "../ProgressBar.css"
 import Bucket from "./Bucket";
 
 function Buckets() {

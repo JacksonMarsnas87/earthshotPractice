@@ -9,9 +9,9 @@ function OutcomeCard({ outcomeNumber, title, description, summary }) {
           <p className="description">{description}</p>
 
           <div style={{display: "flex"}}>
-            <ProgressBar level="HIGH" />
-            <ProgressBar level="HIGH" />
-            <ProgressBar level="HIGH" />
+            <ProgressBar label="HIGH" />
+            <ProgressBar label="HIGH" />
+            <ProgressBar label="HIGH" />
           </div>
 
           <h1 className="summary">SUMMARY</h1>

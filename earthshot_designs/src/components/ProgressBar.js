@@ -1,9 +1,10 @@
 import "../ProgressBar.css"
 
-function ProgressBar({ level }) {
+function ProgressBar({ label }) {
+    // This is a general-purpose bar that is ALWAYS green. It could be changed to render a different colour depending on what label you provide it
     return (
-        <div className="ProgressBar" style={{backgroundColor: "green"}}>
-            {level}
+        <div className="ProgressBar">
+            {label}
         </div>
     );
 }

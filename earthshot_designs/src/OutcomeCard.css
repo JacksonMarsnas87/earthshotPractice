@@ -1,0 +1,39 @@
+.card {
+    text-align: left;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: black;
+    color: white;
+    width: 400px;
+    border-radius: 2%;
+    margin-top: 50px;
+}
+
+.outcomeNumber {
+    font-weight: 100;
+    margin: 0px;
+}
+
+.title {
+    margin: 0px;
+    font-weight: 600;
+}
+
+.description {
+    font-weight: 400;
+    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.summary {
+    font-weight: 600;
+    font-size: 1.25em;
+    margin: 0px;
+    margin-top: 5px;
+}
+
+p {
+    margin: 0px;
+}

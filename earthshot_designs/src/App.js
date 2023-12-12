@@ -1,4 +1,6 @@
 import './App.css';
+import Design1 from './components/Design1';
+import Design2 from './components/Design2';
 import { useState } from 'react';
 
 function App() {
@@ -7,21 +9,17 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={() => setPage(1) }>View design 1</button>
-      <button onClick={() => setPage(2) }>View design 2</button>
-
-      <div className="testDiv">
-        hello
-      </div>
+      <button onClick={() => setPage(1)}>View design 1</button>
+      <button onClick={() => setPage(2)}>View design 2</button>
       
       <>
         {
           page === 1 ?
-          <div>Page 1</div>
+          <Design1 />
 
           :
 
-          <div>Page 2</div>
+          <Design2 />
         }
       </>
     </div>

@@ -1,0 +1,9 @@
+.ProgressBar {
+    width: 33%;
+    height: 20px;
+    border-radius: 10px;
+    padding-left: 5px;
+    margin-right: 10px;
+    font-size: 0.75em;
+    vertical-align: baseline;
+}

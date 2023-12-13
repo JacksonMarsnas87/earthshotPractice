@@ -10,7 +10,7 @@ function Bucket( {number, stat, background, barLabels} ) {
             <div style={{display: "flex"}}>
                 {
                     barLabels.map((newLabel) => (
-                        <ProgressBar label={newLabel} />
+                        <ProgressBar label={newLabel} colour="#34ba5c" />
                     ))
                 }
             </div>

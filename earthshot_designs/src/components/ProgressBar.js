@@ -1,9 +1,9 @@
 import "../ProgressBar.css"
 
-function ProgressBar({ label }) {
-    // This is a general-purpose bar that is ALWAYS green. It could be changed to render a different colour depending on what label you provide it
+function ProgressBar({ label, colour }) {
+    // A colour MUST be passed as a prop. This should probably be changed to predefined values (ie. "HIGH" is always green, "MED" is always yellow, etc.)
     return (
-        <div className="ProgressBar">
+        <div className="ProgressBar" style={{background: colour}}>
             {label}
         </div>
     );

@@ -1,8 +1,8 @@
+import ProblemCard from "./ProblemCard";
+
 function Design2() {
     return (
-        <div>
-            This is design 2
-        </div>
+        <ProblemCard header="FOREST & UMBRELLA" title="Bad water & sanitation" />
     );
 }
   

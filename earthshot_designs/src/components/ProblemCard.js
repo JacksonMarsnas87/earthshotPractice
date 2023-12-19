@@ -53,8 +53,8 @@ function ProblemCard({ header, title }) {
 
             <div id="CardContainer" style={{display: "flex", justifyContent: "center", marginTop: "40px", gap: "20px"}}>
                 <ProblemProfileCountry id="card1" header={header} title={testData.title} summary={testData.summary} causes={testData.causes} solutions={testData.solutions} recommendations={testData.recommendations} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
-                {/* <ProblemProfileCountry id="card2" header={header} title={"40M in India"} summary={"Causing XX deaths, YY reduction in QALY's, ZZ $ cost."} profile={"problem profile."} progressBarLabels={[{"label": "MED SOLVABILITY", "colour": "#bdcf38"}, {"label": "MED OPPORTUNITY", "colour": "#bdcf38"}, {"label": "HIGH IMPACT", "colour": "#34ba5c"}]} />
-                <ProblemProfileCountry id="card3" header={header} title={"40M in India"} summary={"Causing XX deaths, YY reduction in QALY's, ZZ $ cost."} profile={"problem profile."} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]} /> */}
+                <ProblemProfileCountry id="card1" header={header} title={testData.title} summary={testData.summary} causes={testData.causes} solutions={testData.solutions} recommendations={testData.recommendations} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
+                <ProblemProfileCountry id="card1" header={header} title={testData.title} summary={testData.summary} causes={testData.causes} solutions={testData.solutions} recommendations={testData.recommendations} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
             </div>
         </div>
     );

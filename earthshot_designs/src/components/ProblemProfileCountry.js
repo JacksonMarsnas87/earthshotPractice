@@ -1,15 +1,19 @@
 import "../ProblemProfileCountry.css";
-import graph from "../images/lineGraph.png";
+import lineGraph from "../images/lineGraph.png";
+import barGraph from "../images/barGraph.png";
 import ProgressBar from "./ProgressBar";
 import Collapsible from 'react-collapsible';
 import { BsChevronDown } from "react-icons/bs";
 
-function ProblemProfileCountry({ header, title, summary, causes, solutions, progressBarLabels }) {
+function ProblemProfileCountry({ header, title, summary, causes, solutions, recommendations, progressBarLabels }) {
     return (
         <div className="Card">
-          <p className="Header">{header}</p>
-          <h1 className="Title">{title}</h1>
-          <p className="Summary">{summary}</p>
+          <div className="HeaderSection">
+            <p className="Header">{header}</p>
+            <h1 className="Title">{title}</h1>
+            <p className="Summary">{summary}</p>
+            <img src={barGraph} style={{width: "100%"}} />
+          </div>
           
           {/* May want to put each Collapsible into its own component. That would help tidy up this part of the code, but also introduce more components that are really simple */}
           <Collapsible classParentString="DarkTab" tabIndex={0} trigger={[<p className="Trigger">Potential Causes</p>, <BsChevronDown />]}>
@@ -34,7 +38,7 @@ function ProblemProfileCountry({ header, title, summary, causes, solutions, prog
 
             <p>{causes.mainCause}</p>
             {/* This is here as a placeholder. I didn't want to use a chart library and create dummy data just for this example */}
-            <img src={graph} style={{width: "100%"}} />
+            <img src={lineGraph} style={{width: "100%"}} />
             <p>{causes.closingPoint}</p>
           </Collapsible>
 
@@ -56,6 +60,10 @@ function ProblemProfileCountry({ header, title, summary, causes, solutions, prog
                 ))
               }
             </ul>
+          </Collapsible>
+
+          <Collapsible classParentString="DarkTab" trigger={[<p className="Trigger">Recommendations</p>, <BsChevronDown />]}>
+            <p>{recommendations}</p>
           </Collapsible>
 
           <div className="ProgressBarContainer">

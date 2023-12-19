@@ -40,6 +40,7 @@ function ProblemCard({ header, title }) {
                 ]
             }
         },
+        recommendations: "An improvement in industry safety standards could reduce the cancer rate in impoverished areas of India by nearly 50%. Newer safety technology and safer mining methods exist as alternatives for industries to use. While the cost of this change would be significant, it could prove to yield valuable gains in the long run, both for those affected by the mining industry and the industry itself. Healthier people would result in a healthier, more robust workforce, and more people who can contribute to the local economy, improving impoverished communities as a whole."
     }
 
     return (
@@ -51,7 +52,7 @@ function ProblemCard({ header, title }) {
             <img id="Image" src={bycountry} style={{marginTop: "40px"}} />
 
             <div id="CardContainer" style={{display: "flex", justifyContent: "center", marginTop: "40px", gap: "20px"}}>
-                <ProblemProfileCountry id="card1" header={header} title={testData.title} summary={testData.summary} causes={testData.causes} solutions={testData.solutions} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
+                <ProblemProfileCountry id="card1" header={header} title={testData.title} summary={testData.summary} causes={testData.causes} solutions={testData.solutions} recommendations={testData.recommendations} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
                 {/* <ProblemProfileCountry id="card2" header={header} title={"40M in India"} summary={"Causing XX deaths, YY reduction in QALY's, ZZ $ cost."} profile={"problem profile."} progressBarLabels={[{"label": "MED SOLVABILITY", "colour": "#bdcf38"}, {"label": "MED OPPORTUNITY", "colour": "#bdcf38"}, {"label": "HIGH IMPACT", "colour": "#34ba5c"}]} />
                 <ProblemProfileCountry id="card3" header={header} title={"40M in India"} summary={"Causing XX deaths, YY reduction in QALY's, ZZ $ cost."} profile={"problem profile."} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]} /> */}
             </div>

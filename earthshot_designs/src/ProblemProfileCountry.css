@@ -7,26 +7,22 @@
     margin-top: 50px;
 }
 
+.HeaderSection {
+    padding: 20px;
+}
+
 .Header {
     font-size: 0.9rem;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
 }
 
 .Title {
     margin: 0px;
-    margin-left: 20px;
-    margin-right: 20px;
     font-size: 1.5rem;
     font-weight: 600;
 }
 
 .Summary {
     font-size: 0.9rem;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
 }
 
 .ProblemProfileContainer {

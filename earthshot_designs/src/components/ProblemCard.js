@@ -20,7 +20,26 @@ function ProblemCard({ header, title }) {
             ],
             mainCause: "The easiest way to lower the mortality rate is through prevention. The likely cause for many cancer cases is industry and the improper handling of waste and chemicals, as detailed above. Notably, villages that are nearby mining facilities have drastically higher rates of disease. Not only do they have higher cancer rates, but other complications such as birth defects as well. The graph below shows the relation between proximity with a mining facility and the average rate of cancer per 1000 people.",
             closingPoint: "The solution of this problem would result in a much lower mortality rate due to cancer in impoverished areas. Not only that, but it would force industry safety standards, particularly in concern with chemical misuse, to become more strict. With better standards and lower mortality rate, the members of impoverished groups will be able to contribute more and grow their own local economies."
-        }
+        },
+        solutions: {
+            header: "Why hasn’t this been solved? - The lack of cancer prevention and detection  methods in rural India",
+            reasons: {
+                header: "There are three main reasons why this problem is yet to be solved:",
+                points: [
+                    "Funding isn’t always going to the right places. Most funding for detection and treatment is being sent to large, advanced facilities, while smaller facilities are underfunded or nonexistent.",
+                    "Similar to the point above, impoverished areas lack the technology to detect and treat cancer. This could be solved with more funding.",
+                    "Industry safety standards are poor and haven’t improved at all in the last 50 years. We now know that these standards are dangerous, but they’re yet to improve."
+                ]
+            },
+            outcomes: {
+                header: "Who wins and who loses if this problem is solved? There are two groups that this problem is affecting: industries that are contributing to the problem, and those who are getting sick.",
+                points: [
+                    "Industry would be the loser in this situation. They would be required to improve their standards and methods, which could cost a large amount of investment.",
+                    "However, industry could benefit in the long term as well. Healthier people means a healthier and more productive workforce. More people with jobs means more people who can contribute to industry and the economy.",
+                    "The people of India would be the winners. The cancer mortality rate would plummet, resulting in a healthier people."
+                ]
+            }
+        },
     }
 
     return (
@@ -32,7 +51,7 @@ function ProblemCard({ header, title }) {
             <img id="Image" src={bycountry} style={{marginTop: "40px"}} />
 
             <div id="CardContainer" style={{display: "flex", justifyContent: "center", marginTop: "40px", gap: "20px"}}>
-                <ProblemProfileCountry id="card1" header={header} title={testData.title} summary={testData.summary} causes={testData.causes} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
+                <ProblemProfileCountry id="card1" header={header} title={testData.title} summary={testData.summary} causes={testData.causes} solutions={testData.solutions} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
                 {/* <ProblemProfileCountry id="card2" header={header} title={"40M in India"} summary={"Causing XX deaths, YY reduction in QALY's, ZZ $ cost."} profile={"problem profile."} progressBarLabels={[{"label": "MED SOLVABILITY", "colour": "#bdcf38"}, {"label": "MED OPPORTUNITY", "colour": "#bdcf38"}, {"label": "HIGH IMPACT", "colour": "#34ba5c"}]} />
                 <ProblemProfileCountry id="card3" header={header} title={"40M in India"} summary={"Causing XX deaths, YY reduction in QALY's, ZZ $ cost."} profile={"problem profile."} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]} /> */}
             </div>

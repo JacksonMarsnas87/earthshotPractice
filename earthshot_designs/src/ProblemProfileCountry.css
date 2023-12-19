@@ -39,7 +39,7 @@
     height: 40px;
 }
 
-.Collapsible {
+.DarkTab {
     background-color: #313131;
     padding: 20px;
 
@@ -48,18 +48,78 @@
         margin-top: 20px;
     }
 
+    li {
+        font-size: 0.9rem;
+    }
+
     img {
         margin-top: 20px;
     }
 }
 
-.Collapsible__trigger {
+.DarkTab__trigger {
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
+
+    .Trigger {
+        margin: 0px;
+        font-size: 1.1rem;
+        width: 90%;
+    }
+
+    svg {
+        margin-left: auto;
+    }
+
+    &.is-open svg {
+        transition: transform 300ms;
+        transform: rotate(180deg);
+    }
+
+    &.is-closed svg {
+        transition: transform 300ms;
+    }
+}
+
+.LightTab {
+    background-color: #34b4eb;
+    padding: 20px;
+
+    p {
+        font-size: 0.9rem;
+        margin-top: 20px;
+    }
+
+    li {
+        font-size: 0.9rem;
+    }
+
+    img {
+        margin-top: 20px;
+    }
+}
+
+.LightTab__trigger {
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+
+    .Trigger {
+        margin: 0px;
+        font-size: 1.1rem;
+        width: 90%;
+    }
+
+    svg {
+        margin-left: auto;
+    }
 
     &.is-open svg {
         transition: transform 300ms;

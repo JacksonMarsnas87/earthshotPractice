@@ -1,25 +1,31 @@
 .Card {
     text-align: left;
-    padding: 20px;
     background-color: #34b4eb;
     color: white;
-    width: 400px;
-    border-radius: 2%;
+    width: 500px;
+    border-radius: 8px;
     margin-top: 50px;
 }
 
 .Header {
     font-size: 0.9rem;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
 }
 
 .Title {
     margin: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
     font-size: 1.5rem;
     font-weight: 600;
 }
 
 .Summary {
     font-size: 0.9rem;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 20px;
 }
 
@@ -31,4 +37,42 @@
     font-weight: 600;
     margin-bottom: 20px;
     height: 40px;
+}
+
+.Collapsible {
+    background-color: #313131;
+    padding: 20px;
+
+    p {
+        font-size: 0.9rem;
+        margin-top: 20px;
+    }
+
+    img {
+        margin-top: 20px;
+    }
+}
+
+.Collapsible__trigger {
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.is-open svg {
+        transition: transform 300ms;
+        transform: rotate(180deg);
+    }
+
+    &.is-closed svg {
+        transition: transform 300ms;
+    }
+}
+
+.ProgressBarContainer {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }

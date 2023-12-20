@@ -1,9 +1,10 @@
 import "../ProblemProfileCountry.css";
-import lineGraph from "../images/lineGraph.png";
-import barGraph from "../images/barGraph.png";
 import ProgressBar from "./ProgressBar";
 import Collapsible from 'react-collapsible';
+import { ResponsiveContainer, CartesianGrid, XAxis, YAxis, Label, BarChart, Bar, LineChart, Line } from "recharts";
 import { BsChevronDown } from "react-icons/bs";
+import TestData from "../testdata/TestData";
+import TestDataLine from "../testdata/TestDataLineGraph";
 
 function ProblemProfileCountry({ header, title, summary, causes, solutions, recommendations, progressBarLabels }) {
     return (
@@ -12,7 +13,22 @@ function ProblemProfileCountry({ header, title, summary, causes, solutions, reco
             <p className="Header">{header}</p>
             <h1 className="Title">{title}</h1>
             <p className="Summary">{summary}</p>
-            <img src={barGraph} style={{width: "100%"}} />
+
+            <ResponsiveContainer width="99%" height={200} style={{marginTop: "20px", marginBottom: "20px", display: "flex", flexDirection: "column"}}>
+              <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>Average cancer cases/1000 people</p>
+              <BarChart data={TestData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                {/* <XAxis dataKey="name" />
+                <YAxis /> */}
+                <XAxis dataKey="name" stroke="white" height={50}>
+                  <Label value="Location" position="insideBottom" fill="white" />
+                </XAxis>
+                <YAxis stroke="white">
+                  <Label value="Cases/1000 people" position="insideLeft" angle={270} dy={70} fill="white" />
+                </YAxis>
+                <Bar dataKey={"value"} fill="#282c34" />
+              </BarChart>
+            </ResponsiveContainer>
           </div>
           
           {/* May want to put each Collapsible into its own component. That would help tidy up this part of the code, but also introduce more components that are really simple */}
@@ -37,8 +53,19 @@ function ProblemProfileCountry({ header, title, summary, causes, solutions, reco
             </ul>
 
             <p>{causes.mainCause}</p>
-            {/* This is here as a placeholder. I didn't want to use a chart library and create dummy data just for this example */}
-            <img src={lineGraph} style={{width: "100%"}} />
+            <ResponsiveContainer width="99%" height={200} style={{marginTop: "20px", marginBottom: "60px", display: "flex", flexDirection: "column"}}>
+            <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>Cancer cases in proximity to mining facilities</p>
+              <LineChart data={TestDataLine}>
+                <CartesianGrid strokeDasharray={"3 3"} />
+                <XAxis dataKey="distance" stroke="white" height={50}>
+                  <Label value="Distnace from mining facility (kM)" position="insideBottom" fill="white" />
+                </XAxis>
+                <YAxis stroke="white">
+                  <Label value="Cases/1000 people" position="insideLeft" angle={270} dy={60} fill="white" />
+                </YAxis>
+                <Line type="monotone" dataKey="rate" stroke="#34b4eb" />
+              </LineChart>
+            </ResponsiveContainer>
             <p>{causes.closingPoint}</p>
           </Collapsible>
 

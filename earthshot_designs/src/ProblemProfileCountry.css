@@ -52,19 +52,6 @@
 .DarkTab {
     background-color: #313131;
     padding: 20px;
-
-    p {
-        font-size: 0.9rem;
-        margin-top: 20px;
-    }
-
-    li {
-        font-size: 0.9rem;
-    }
-
-    img {
-        margin-top: 20px;
-    }
 }
 
 .DarkTab__trigger {
@@ -98,19 +85,6 @@
 .LightTab {
     background-color: #34b4eb;
     padding: 20px;
-
-    p {
-        font-size: 0.9rem;
-        margin-top: 20px;
-    }
-
-    li {
-        font-size: 0.9rem;
-    }
-
-    img {
-        margin-top: 20px;
-    }
 }
 
 .LightTab__trigger {
@@ -139,6 +113,15 @@
     &.is-closed svg {
         transition: transform 300ms;
     }
+}
+
+.DropdownText {
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+.DropdownPoint {
+    font-size: 0.9rem;
 }
 
 .ProgressBarContainer {

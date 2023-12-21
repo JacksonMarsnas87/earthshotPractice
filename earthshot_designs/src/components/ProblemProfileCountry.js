@@ -42,17 +42,17 @@ function ProblemProfileCountry({ header, title, summary, causes, solutions, reco
           
           {/* May want to put each Collapsible into its own component. That would help tidy up this part of the code, but also introduce more components that are really simple */}
           <Collapsible classParentString="DarkTab" tabIndex={0} trigger={[<p className="Trigger">Potential Causes</p>, <BsChevronDown />]}>
-            <p>{causes.headline}</p>
+            <p className="DropdownText">{causes.headline}</p>
 
             <ul>
               {
                 causes.points.map((point) => {
                   return <div>
-                    <li>{point.title}</li>
+                    <li className="DropdownPoint">{point.title}</li>
                     <ul>
                       {
                         point.subpoints.map((subpoint) => (
-                          <li>{subpoint}</li>
+                          <li className="DropdownPoint">{subpoint}</li>
                         ))
                       }
                     </ul>
@@ -61,7 +61,7 @@ function ProblemProfileCountry({ header, title, summary, causes, solutions, reco
               }
             </ul>
 
-            <p>{causes.mainCause}</p>
+            <p className="DropdownText">{causes.mainCause}</p>
             <ResponsiveContainer width="99%" height={200} style={{marginTop: "20px", marginBottom: "60px", display: "flex", flexDirection: "column"}}>
             <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>Cancer cases in proximity to mining facilities</p>
               <LineChart data={TestDataLine}>
@@ -75,31 +75,31 @@ function ProblemProfileCountry({ header, title, summary, causes, solutions, reco
                 <Line type="monotone" dataKey="rate" stroke="#34b4eb" />
               </LineChart>
             </ResponsiveContainer>
-            <p>{causes.closingPoint}</p>
+            <p className="DropdownText">{causes.closingPoint}</p>
           </Collapsible>
 
           <Collapsible classParentString="LightTab" trigger={[<p className="Trigger">{solutions.header}</p>, <BsChevronDown />]}>
-            <p>{solutions.reasons.header}</p>
+            <p className="DropdownText">{solutions.reasons.header}</p>
             <ul>
               {
                 solutions.reasons.points.map((point) => (
-                  <li>{point}</li>
+                  <li className="DropdownPoint">{point}</li>
                 ))
               }
             </ul>
 
-            <p>{solutions.outcomes.header}</p>
+            <p className="DropdownText">{solutions.outcomes.header}</p>
             <ul>
               {
                 solutions.outcomes.points.map((point) => (
-                  <li>{point}</li>
+                  <li className="DropdownPoint">{point}</li>
                 ))
               }
             </ul>
           </Collapsible>
 
           <Collapsible classParentString="DarkTab" trigger={[<p className="Trigger">Recommendations</p>, <BsChevronDown />]}>
-            <p>{recommendations}</p>
+            <p className="DropdownText">{recommendations}</p>
           </Collapsible>
 
           <div className="ProgressBarContainer">

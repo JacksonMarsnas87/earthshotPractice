@@ -5,10 +5,19 @@ import { ResponsiveContainer, CartesianGrid, XAxis, YAxis, Label, BarChart, Bar,
 import { BsChevronDown } from "react-icons/bs";
 import TestData from "../testdata/TestData";
 import TestDataLine from "../testdata/TestDataLineGraph";
+import { useState, useEffect } from "react";
 
 function ProblemProfileCountry({ header, title, summary, causes, solutions, recommendations, progressBarLabels }) {
+
+  const [width, setWidth] = useState(window.innerWidth);
+  const tinyScreenWidth = 500;
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+  })
+
     return (
-        <div className="Card">
+        <div className={width <= tinyScreenWidth ? "TinyCard" : "Card"}>
           <div className="HeaderSection">
             <p className="Header">{header}</p>
             <h1 className="Title">{title}</h1>

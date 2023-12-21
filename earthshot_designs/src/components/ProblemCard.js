@@ -51,7 +51,7 @@ function ProblemCard({ header, title }) {
 
             <img id="Image" src={bycountry} style={{marginTop: "40px"}} />
 
-            <div id="CardContainer" style={{display: "flex", justifyContent: "center", marginTop: "40px", gap: "20px"}}>
+            <div id="CardContainer" style={{display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "40px", gap: "20px"}}>
                 <ProblemProfileCountry id="card1" header={header} title={testData.title} summary={testData.summary} causes={testData.causes} solutions={testData.solutions} recommendations={testData.recommendations} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
                 <ProblemProfileCountry id="card1" header={header} title={testData.title} summary={testData.summary} causes={testData.causes} solutions={testData.solutions} recommendations={testData.recommendations} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
                 <ProblemProfileCountry id="card1" header={header} title={testData.title} summary={testData.summary} causes={testData.causes} solutions={testData.solutions} recommendations={testData.recommendations} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>

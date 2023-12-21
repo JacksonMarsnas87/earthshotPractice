@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 function ProblemProfileCountry({ header, title, summary, causes, solutions, recommendations, progressBarLabels }) {
 
   const [width, setWidth] = useState(window.innerWidth);
-  const tinyScreenWidth = 500;
+  const tinyScreenWidth = 600;
 
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));

@@ -49,7 +49,7 @@ function ProblemCard({ header, title }) {
                 <ProblemHeaderCard header={header} title={title} summary={"Globally, 1 in 3 != safe drinking water, mostly != LDC's"} details={["Here is a fact", "Here is another fact. This one is much longer and will take up multiple lines", "Here is a third fact"]} progressBarLabels={["HIGH", "HIGH", "HIGH"]} />
             </div>
 
-            <img id="Image" src={bycountry} style={{marginTop: "40px"}} />
+            <img id="Image" src={bycountry} style={{marginTop: "40px", maxWidth: "100%"}} />
 
             <div id="CardContainer" style={{display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "40px", gap: "20px"}}>
                 <ProblemProfileCountry id="card1" header={header} title={testData.title} summary={testData.summary} causes={testData.causes} solutions={testData.solutions} recommendations={testData.recommendations} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>

@@ -7,11 +7,11 @@ import TestData from "../testdata/TestData";
 import TestDataLine from "../testdata/TestDataLineGraph";
 import { useState, useEffect } from "react";
 
-function ProblemProfileCountry({ header, title, summary, causes, solutions, recommendations, progressBarLabels }) {
+function ProblemProfileCountry({ header, data, progressBarLabels }) {
 
   const [width, setWidth] = useState(window.innerWidth);
   const tinyScreenWidth = 600;
-
+  
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   })
@@ -20,8 +20,8 @@ function ProblemProfileCountry({ header, title, summary, causes, solutions, reco
         <div className={width <= tinyScreenWidth ? "TinyCard" : "Card"}>
           <div className="HeaderSection">
             <p className="Header">{header}</p>
-            <h1 className="Title">{title}</h1>
-            <p className="Summary">{summary}</p>
+            <h1 className="Title">{data.title}</h1>
+            <p className="Summary">{data.summary}</p>
 
             <ResponsiveContainer width="99%" height={200} style={{marginTop: "20px", marginBottom: "20px", display: "flex", flexDirection: "column"}}>
               <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>Average cancer cases/1000 people</p>
@@ -42,11 +42,11 @@ function ProblemProfileCountry({ header, title, summary, causes, solutions, reco
           
           {/* May want to put each Collapsible into its own component. That would help tidy up this part of the code, but also introduce more components that are really simple */}
           <Collapsible classParentString="DarkTab" tabIndex={0} trigger={[<p className="Trigger">Potential Causes</p>, <BsChevronDown />]}>
-            <p className="DropdownText">{causes.headline}</p>
+            <p className="DropdownText">{data.causes.headline}</p>
 
             <ul>
               {
-                causes.points.map((point) => {
+                data.causes.points.map((point) => {
                   return <div>
                     <li className="DropdownPoint">{point.title}</li>
                     <ul>
@@ -61,7 +61,7 @@ function ProblemProfileCountry({ header, title, summary, causes, solutions, reco
               }
             </ul>
 
-            <p className="DropdownText">{causes.mainCause}</p>
+            <p className="DropdownText">{data.causes.mainCause}</p>
             <ResponsiveContainer width="99%" height={200} style={{marginTop: "20px", marginBottom: "60px", display: "flex", flexDirection: "column"}}>
             <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>Cancer cases in proximity to mining facilities</p>
               <LineChart data={TestDataLine}>
@@ -75,23 +75,23 @@ function ProblemProfileCountry({ header, title, summary, causes, solutions, reco
                 <Line type="monotone" dataKey="rate" stroke="#34b4eb" />
               </LineChart>
             </ResponsiveContainer>
-            <p className="DropdownText">{causes.closingPoint}</p>
+            <p className="DropdownText">{data.causes.closingPoint}</p>
           </Collapsible>
 
-          <Collapsible classParentString="LightTab" trigger={[<p className="Trigger">{solutions.header}</p>, <BsChevronDown />]}>
-            <p className="DropdownText">{solutions.reasons.header}</p>
+          <Collapsible classParentString="LightTab" trigger={[<p className="Trigger">{data.solutions.header}</p>, <BsChevronDown />]}>
+            <p className="DropdownText">{data.solutions.reasons.header}</p>
             <ul>
               {
-                solutions.reasons.points.map((point) => (
+                data.solutions.reasons.points.map((point) => (
                   <li className="DropdownPoint">{point}</li>
                 ))
               }
             </ul>
 
-            <p className="DropdownText">{solutions.outcomes.header}</p>
+            <p className="DropdownText">{data.solutions.outcomes.header}</p>
             <ul>
               {
-                solutions.outcomes.points.map((point) => (
+                data.solutions.outcomes.points.map((point) => (
                   <li className="DropdownPoint">{point}</li>
                 ))
               }
@@ -99,7 +99,7 @@ function ProblemProfileCountry({ header, title, summary, causes, solutions, reco
           </Collapsible>
 
           <Collapsible classParentString="DarkTab" trigger={[<p className="Trigger">Recommendations</p>, <BsChevronDown />]}>
-            <p className="DropdownText">{recommendations}</p>
+            <p className="DropdownText">{data.recommendations}</p>
           </Collapsible>
 
           <div className="ProgressBarContainer">

@@ -18,9 +18,21 @@ function NavPage() {
   const getColoursFromCategory = (cardCategory) => {
     switch(cardCategory) {
       case "Poverty":
-        return {primary: "#FFA7A7", secondary: "#840000"}
+        return {primary: "#ffb0b0", secondary: "#ff0000"}
       case "Economic":
-        return {primary: "#95ECFF", secondary: "#007893"}
+        return {primary: "#c2ffad", secondary: "#37db00"}
+      case "Hunger":
+        return {primary: "#ffbff8", secondary: "#c400ad"}
+      case "Education":
+        return {primary: "#efffb5", secondary: "#94bd00"}
+      case "Equality":
+        return {primary: "#d6a1ff", secondary: "#7c00db"}
+      case "Energy":
+        return {primary: "#adf9ff", secondary: "#00b0bd"}
+      case "Environmental":
+        return {primary: "#c2c8ff", secondary: "#0015d6"}
+      case "Peace & Justice":
+        return {primary: "#ffecb8", secondary: "#d69d00"}
       default:
         return {primary: "#FFA7A7", secondary: "#840000"}
     }
@@ -33,14 +45,14 @@ function NavPage() {
 
             <div className="ButtonContainer">
               <CategoryButton text="All" colour="#000000" category={category} setCategory={setCategory} />
-              <CategoryButton text="Economic" colour="#00D1FF" category={category} setCategory={setCategory} />
-              <CategoryButton text="Hunger" colour="#C70000" category={category} setCategory={setCategory} />
-              <CategoryButton text="Education" colour="#FF00C7" category={category} setCategory={setCategory} />
-              <CategoryButton text="Equality" colour="#D3D800" category={category} setCategory={setCategory} />
-              <CategoryButton text="Energy" colour="#00FF29" category={category} setCategory={setCategory} />
-              <CategoryButton text="Environmental" colour="#0FBC00" category={category} setCategory={setCategory} />
-              <CategoryButton text="Peace & Justice" colour="#FF0000" category={category} setCategory={setCategory} />
-              <CategoryButton text="Poverty" colour="#840000" category={category} setCategory={setCategory} />
+              <CategoryButton text="Economic" colour="#37db00" category={category} setCategory={setCategory} />
+              <CategoryButton text="Hunger" colour="#c400ad" category={category} setCategory={setCategory} />
+              <CategoryButton text="Education" colour="#94bd00" category={category} setCategory={setCategory} />
+              <CategoryButton text="Equality" colour="#7c00db" category={category} setCategory={setCategory} />
+              <CategoryButton text="Energy" colour="#00b0bd" category={category} setCategory={setCategory} />
+              <CategoryButton text="Environmental" colour="#0015d6" category={category} setCategory={setCategory} />
+              <CategoryButton text="Peace & Justice" colour="#d69d00" category={category} setCategory={setCategory} />
+              <CategoryButton text="Poverty" colour="#ff0000" category={category} setCategory={setCategory} />
             </div>
         </div>
 

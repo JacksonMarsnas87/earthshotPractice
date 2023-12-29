@@ -2,12 +2,12 @@ import "../../NavPage.css"
 import CategoryButton from "./CategoryButton";
 import NavCard from "./NavCard";
 import { useState, useEffect } from "react";
-import { BsFillHeartPulseFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import NavCardData from "../../testdata/NavCardData";
 
 function NavPage() {
 
-  const [category, setCategory] = useState("Poverty")
+  const [category, setCategory] = useState("All")
   const [data, setData] = useState(NavCardData)
 
   useEffect(() => {
@@ -59,7 +59,9 @@ function NavPage() {
         <div className="NavCardContainer">
           {
             data.map(cardData => (
-              <NavCard icon={cardData.iconName} title={cardData.title} category={cardData.category} summary={cardData.summary} colourScheme={getColoursFromCategory(cardData.category)} />
+              <Link to={`problemProfile/${cardData.problemNumber}`} style={{textDecoration: "none", color: "#000"}}>
+                <NavCard icon={cardData.iconName} title={cardData.title} category={cardData.category} summary={cardData.summary} colourScheme={getColoursFromCategory(cardData.category)} />
+              </Link>
             ))
           }
 

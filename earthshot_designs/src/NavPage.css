@@ -1,0 +1,46 @@
+.HeaderContainer {
+    width: 100%;
+    background-color: #edede8;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 110px;
+}
+
+.NavHeader {
+    font-size: 3rem;
+}
+
+.NavContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fdfdfd;
+}
+
+.ButtonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 30px;
+    row-gap: 30px;
+    width: 800px;
+}
+
+.NavCardContainer {
+    width: 100%;
+    max-width: 1120px;
+    margin-top: -60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+
+.CardIcon {
+    margin-top: 30px;
+    width: 80px;
+    height: 80px;
+}

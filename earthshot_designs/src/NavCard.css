@@ -1,0 +1,46 @@
+.NavCard {
+    width: 300px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    text-align: left;
+    transition: all .2s ease;
+}
+
+.NavCard:hover {
+    cursor: pointer;
+    box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.2);
+}
+
+.IconContainer {
+    text-align: center;
+    width: 100%;
+}
+
+.NavCardTitle {
+    font-size: 1.8rem;
+    margin-top: 0px;
+}
+
+.CategoryContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.NavCardCategory {
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: max-content;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.NavCardSummary {
+    font-size: 0.9rem;
+    margin-top: 20px;
+}

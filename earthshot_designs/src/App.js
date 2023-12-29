@@ -1,7 +1,7 @@
 import './App.css';
 import Design1 from './components/Design1';
 import Design2 from './components/Design2';
-import TestRoute from './components/TestRoute';
+import NavPage from './components/NavComponents/NavPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -13,13 +13,14 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Design1 />} />
+          {/* This is here temporarily for testing */}
+          <Route path="/" element={<NavPage />} />
           <Route path="/design1" element={<Design1 />} />
           <Route path="/design2" element={<Design2 />} />
         </Routes>
       </BrowserRouter>
     </div>
-    
+
     // Leaving this here in case I need to go back on my choice of using routes
 
     // <div className="App">

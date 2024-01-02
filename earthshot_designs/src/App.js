@@ -17,7 +17,6 @@ function App() {
           <Route path="/" element={<NavPage />} />
           <Route path="/problemProfile/:problemNumber" element={<Design2 />} />
           <Route path="/design1" element={<Design1 />} />
-          <Route path="/design2" element={<Design2 />} />
         </Routes>
       </BrowserRouter>
     </div>

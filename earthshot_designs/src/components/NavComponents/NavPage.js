@@ -59,7 +59,7 @@ function NavPage() {
         <div className="NavCardContainer">
           {
             data.map(cardData => (
-              <Link to={`problemProfile/${cardData.problemNumber}`} style={{textDecoration: "none", color: "#000"}}>
+              <Link className="CardLink" to={`problemProfile/${cardData.problemNumber}`} style={{textDecoration: "none", color: "#000"}}>
                 <NavCard icon={cardData.iconName} title={cardData.title} category={cardData.category} summary={cardData.summary} colourScheme={getColoursFromCategory(cardData.category)} />
               </Link>
             ))

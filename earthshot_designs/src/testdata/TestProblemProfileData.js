@@ -8,7 +8,7 @@ const ProblemProfileData = {
     1: {
         number: 1,
         header: "TEST & DATA",
-        title: "Bad water & sanitation"
+        title: "This is a test scenario"
     },
 }
 

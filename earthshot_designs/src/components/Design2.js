@@ -11,8 +11,7 @@ function Design2() {
     const { problemNumber } = useParams()
 
     useEffect(() => {
-        // Get data for the header card and ALL of its children. Create an API to do this
-        // Some sort of "problem ID" (unique identifier) should be passed in the props to do this
+        // Get data for the header card. The data for the children can be retrieved from the ProblemCard component in a useEffect
         setData(ProblemProfileData[problemNumber])
         setProbNum(problemNumber)
     }, [])

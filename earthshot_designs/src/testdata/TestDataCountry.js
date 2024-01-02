@@ -1,6 +1,8 @@
 let CountryData = {
     0: [
         {
+            // graphDataNumber can be used alongside problemNumber to retrieve graphing data. However, if we are mapping over problem profiles this may be unescesary, as this is essentially just an index
+            graphDataNumber: 0,
             title: "Cancer rates in India are 20% higher than the global average. This rate is even worse in more impoverished parts of the country.",
             summary: "Among more impoverished parts of the country and those who work in poor conditions, the cancer rate is almost 40% above the global average. This is no statistical anomaly. Thousands are dying every year as a result. However, most of these deaths are preventable by improving work conditions and making medical treatments more accessible for the less fortunate.",
             causes: {
@@ -43,6 +45,7 @@ let CountryData = {
 
     1: [
         {
+            graphDataNumber: 0,
             title: "Here is some different data.",
             summary: "This is a test summary.",
             causes: {

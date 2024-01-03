@@ -8,14 +8,14 @@ import { useState, useEffect } from "react";
 // ALL data should be sent here, including the main card (header, title) AND child cards
 function ProblemCard({ header, title, problemNumber }) {
     const [countryData, setCountryData] = useState(CountryData[problemNumber])
-    const [graphData, setGraphData] = useState(0)
+    const [graphData, setGraphData] = useState(TestGraphData[problemNumber])
 
     useEffect(() => {
         // This is an array of problem statements to be mapped over. Should be retrieved from a database (retrieve all entries with the same problemNumber)
         // Also get the graph data for all profiles within this problem
         setCountryData(CountryData[problemNumber])
         setGraphData(TestGraphData[problemNumber])
-    }, [problemNumber])
+    }, [])
 
     return (
         <div>

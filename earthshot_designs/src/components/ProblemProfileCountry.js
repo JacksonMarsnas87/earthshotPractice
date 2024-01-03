@@ -18,7 +18,6 @@ function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
     setBarGraphData(graphData[data.graphDataNumber].barGraphData)
     setLineGraphData(graphData[data.graphDataNumber].lineGraphData)
-    console.log(lineGraphData.title)
   }, [])
 
     return (

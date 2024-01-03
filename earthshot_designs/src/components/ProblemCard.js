@@ -2,14 +2,19 @@ import ProblemHeaderCard from "./ProblemHeaderCard";
 import bycountry from "../images/bycountry.png";
 import ProblemProfileCountry from "./ProblemProfileCountry";
 import CountryData from "../testdata/TestDataCountry";
+import TestGraphData from "../testdata/TestGraphData";
 import { useState, useEffect } from "react";
 
 // ALL data should be sent here, including the main card (header, title) AND child cards
 function ProblemCard({ header, title, problemNumber }) {
     const [countryData, setCountryData] = useState(CountryData[problemNumber])
+    const [graphData, setGraphData] = useState(0)
 
     useEffect(() => {
+        // This is an array of problem statements to be mapped over. Should be retrieved from a database (retrieve all entries with the same problemNumber)
+        // Also get the graph data for all profiles within this problem
         setCountryData(CountryData[problemNumber])
+        setGraphData(TestGraphData[problemNumber])
     }, [problemNumber])
 
     return (
@@ -22,9 +27,9 @@ function ProblemCard({ header, title, problemNumber }) {
 
             {/* This should be done by mapping over all of the countryData array. Since we don't have real data right now, it will be hardcoded for now */}
             <div id="CardContainer" style={{display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "40px", gap: "20px"}}>
-                <ProblemProfileCountry id="card1" header={header} data={countryData[0]} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
-                <ProblemProfileCountry id="card1" header={header} data={countryData[0]} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
-                <ProblemProfileCountry id="card1" header={header} data={countryData[0]} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
+                <ProblemProfileCountry id="card1" header={header} data={countryData[0]} graphData={graphData} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
+                <ProblemProfileCountry id="card1" header={header} data={countryData[0]} graphData={graphData} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
+                <ProblemProfileCountry id="card1" header={header} data={countryData[0]} graphData={graphData} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
             </div>
         </div>
     );

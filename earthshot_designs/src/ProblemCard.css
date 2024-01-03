@@ -1,0 +1,25 @@
+.OutterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ProblemHeaderCardContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.ByCountryImage {
+    margin-top: 40px;
+    max-width: 100%;
+}
+
+.CountryCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 40px;
+    width: 90%;
+    max-width: 1400px;
+}

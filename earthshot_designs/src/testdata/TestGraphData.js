@@ -53,23 +53,20 @@ const TestGraphData = {
                 xAxisLabel: "Location",
                 yAxisLabel: "Cases/1000 people"
             },  {
-                type: "line",
+                type: "pie",
                 labels: [
-                    {name: "Impoverished", colour: "#5e00bd"}
+                    {name: "1", colour: "#282c34"},
+                    {name: "2", colour: "#5e00bd"},
+                    {name: "3", colour: "#008518"},
+                    {name: "3", colour: "#9e0069"}
                 ],
                 data: [
-                    {name: "10", "Impoverished": "100"},
-                    {name: "20", "Impoverished": "90"},
-                    {name: "30", "Impoverished": "81"},
-                    {name: "40", "Impoverished": "69"},
-                    {name: "50", "Impoverished": "65"},
-                    {name: "60", "Impoverished": "53"},
-                    {name: "70", "Impoverished": "45"},
-                    {name: "80", "Impoverished": "41"},
-                    {name: "90", "Impoverished": "38"},
-                    {name: "100", "Impoverished": "31"}
+                    {name: "1 food source", "value": 60},
+                    {name: "2 food sources", "value": 23},
+                    {name: "3 food sources", "value": 11},
+                    {name: "4 food sources", "value": 6}
                 ],
-                title: "Cancer cases in proximity to mining facilities",
+                title: "Percentage of food related illness outbreaks in communities with varying numbers of food sources",
                 xAxisLabel: "Distnace from mining facility (kM)",
                 yAxisLabel: "Cases/1000 people"
             }

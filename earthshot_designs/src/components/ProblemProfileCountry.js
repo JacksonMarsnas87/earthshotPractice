@@ -1,7 +1,8 @@
 import "../ProblemProfileCountry.css";
 import ProgressBar from "./ProgressBar";
 import Collapsible from 'react-collapsible';
-import { ResponsiveContainer, CartesianGrid, XAxis, YAxis, Label, BarChart, Bar, LineChart, Line, Legend } from "recharts";
+import renderCustomizedLabel from "../chartHelpers/PieChartLabelGenerator";
+import { ResponsiveContainer, CartesianGrid, XAxis, YAxis, Label, BarChart, Bar, LineChart, Line, Legend, PieChart, Pie, Cell } from "recharts";
 import { BsChevronDown } from "react-icons/bs";
 import TestData from "../testdata/TestData";
 import TestDataLine from "../testdata/TestDataLineGraph";
@@ -52,6 +53,21 @@ function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
                   ))
                 }
               </LineChart>
+      case "pie":
+        return (
+          <PieChart>
+            <Pie data={graphData.data} dataKey="value" cx="50%" cy="50%" outerRadius={90} fill="#ff0000" labelLine={false} label={renderCustomizedLabel}>
+            
+              {
+                graphData.data.map((label, index) => {
+                  return <Cell fill={graphData.labels[index].colour} />
+                })
+              }
+            </Pie>
+
+            <Legend />
+          </PieChart>
+        )
     }
   }
 
@@ -90,7 +106,7 @@ function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
             </ul>
 
             <p className="DropdownText">{data.causes.mainCause}</p>
-            <ResponsiveContainer width="99%" height={200} style={{marginTop: "20px", marginBottom: "60px", display: "flex", flexDirection: "column"}}>
+            <ResponsiveContainer width="99%" height={300} style={{marginTop: "20px", marginBottom: "60px", display: "flex", flexDirection: "column"}}>
               <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{secondGraphData.title}</p>
               {getGraphType(secondGraphData)}
             </ResponsiveContainer>

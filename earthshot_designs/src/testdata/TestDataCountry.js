@@ -58,7 +58,7 @@ let CountryData = {
                         subpoints: ["Many people aren't aware of the common signs of food related illness, so it may be difficult to warn others about the dangers", "Improper handling or storage of food, such as raw meat", "Many people have to rely on cheaper food sources, which may be unsafe"]
                     }
                 ],
-                mainCause: "The simplest way to prevent food related illnesses is to stop it at its source: the manufacturing process. Seeing as the same illnesses seem to appear in multiple nearby communities at the same time, the likely cause would be a shared food source between the communities. The graph below details the illness rate of communities in relation to their proximity with a food source that is known to cause illness.",
+                mainCause: "The simplest way to prevent food related illnesses is to stop it at its source: the manufacturing process. Seeing as the same illnesses seem to appear in multiple nearby communities at the same time, the likely cause would be a shared food source between the communities. The graph below details mass outbreaks of food related illness in Kenyan communities. It is split into groups based on how many different food sources each community has. Communities with fewer food sources have drastically higher rates of illness.",
                 closingPoint: "If this problem were solved, it would result in a much lower hopitalization rate due to illness. This would free hospitals to contribute to other issues. It would also result in a healthier population in general. Many of these communities are remote and have no other options."
             },
             solutions: {

@@ -40,6 +40,46 @@ let CountryData = {
                 }
             },
             recommendations: "An improvement in industry safety standards could reduce the cancer rate in impoverished areas of India by nearly 50%. Newer safety technology and safer mining methods exist as alternatives for industries to use. While the cost of this change would be significant, it could prove to yield valuable gains in the long run, both for those affected by the mining industry and the industry itself. Healthier people would result in a healthier, more robust workforce, and more people who can contribute to the local economy, improving impoverished communities as a whole."
+        },
+
+        {
+            graphDataNumber: 0,
+            title: "Food related illness is drastically higher in Kenya when compared to the global average. However, the data shows that this illness is usually contained within communities that are geographically close.",
+            summary: "Communities that are close geographically tend to show the same common food related illnesses. This is likely a result of poor growing/manufacturing conditions of food in those areas, which is then shipped to the mentioned communities. Many are hospitalized as a result. This continues to be an issue despite the fact that it can be easily fixed.",
+            causes: {
+                headline: "There are a few potential causes to the food illness epidemic. Most of those causes can be seperated into two groups: pre-shipping and post-shipping. Some of these issues include:",
+                points: [
+                    {
+                        title: "Pre-shipping. These are issues that occur before food is shipped to consumers",
+                        subpoints: ["Poor sanitation in agriculture. Certain kinds of outbreaks, such as e-coli, still occur in countries that are more developed. This is amplified in countries with lower standards for food safety", "General improper handling of food. Standards in Kenya are lower than in other countries, so handling food in an innapropriate way is seen as acceptable", "Fewer ways to detect and prevent outbreaks. Detection and prevention methods in Kenya are not as advanced as other countries"]
+                    },
+                    {
+                        title: "Post-shipping. These are issue sthat occur after food has been shipped to consumers",
+                        subpoints: ["Many people aren't aware of the common signs of food related illness, so it may be difficult to warn others about the dangers", "Improper handling or storage of food, such as raw meat", "Many people have to rely on cheaper food sources, which may be unsafe"]
+                    }
+                ],
+                mainCause: "The simplest way to prevent food related illnesses is to stop it at its source: the manufacturing process. Seeing as the same illnesses seem to appear in multiple nearby communities at the same time, the likely cause would be a shared food source between the communities. The graph below details the illness rate of communities in relation to their proximity with a food source that is known to cause illness.",
+                closingPoint: "If this problem were solved, it would result in a much lower hopitalization rate due to illness. This would free hospitals to contribute to other issues. It would also result in a healthier population in general. Many of these communities are remote and have no other options."
+            },
+            solutions: {
+                header: "Why hasn’t this been solved? - The lack of food safety standards in rural Kenyan communities",
+                reasons: {
+                    header: "There are three main reasons why this problem is yet to be solved:",
+                    points: [
+                        "Many food providers aren't aware that their standards are poor. They've had the same standards for decades and aren't aware of the consequences",
+                        "Changing safety standards is expensive. Many food providers would be forced to commit to massive financial investments",
+                        "There is a lack of motivation to do so. Many rural food providers are the sole providers for a specific region and have no competition. A lack of competition means there is little reason to change"
+                    ]
+                },
+                outcomes: {
+                    header: "Who wins and who loses if this problem is solved? There are two groups that this problem is affecting: rural food producers and the communities that rely on them.",
+                    points: [
+                        "Food producers are the losers if they're are forced to improve their standards. This would cost them a lot of money, but it wouldn't increase their gains.",
+                        "Consumers would be the winners. Many people in rural communities have few food sources they can rely on. They should be able to trust their main sources of food."
+                    ]
+                }
+            },
+            recommendations: "Improvements in food safety standards in rural communities has shown decreases of food related illness of nearly 70%. Higher standards require no new research or technology. Known standards can be implemented, and while the costs are steep, it is worth the investment to keep communities safe."
         }
     ],
 

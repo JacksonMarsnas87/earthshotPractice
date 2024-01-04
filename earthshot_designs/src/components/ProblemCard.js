@@ -28,9 +28,11 @@ function ProblemCard({ header, title, problemNumber }) {
 
             {/* This should be done by mapping over all of the countryData array. Since we don't have real data right now, it will be hardcoded for now */}
             <div className="CountryCardContainer">
-                <ProblemProfileCountry id="card1" header={header} data={countryData[0]} graphData={graphData} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
-                <ProblemProfileCountry id="card1" header={header} data={countryData[0]} graphData={graphData} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
-                <ProblemProfileCountry id="card1" header={header} data={countryData[0]} graphData={graphData} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
+                {
+                    countryData.map((data) => (
+                        <ProblemProfileCountry header={header} data={data} graphData={graphData} progressBarLabels={[{"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}, {"label": "HIGH...", "colour": "#34ba5c"}]}/>
+                    ))
+                }
             </div>
         </div>
     );

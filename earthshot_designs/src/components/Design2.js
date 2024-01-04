@@ -5,10 +5,10 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function Design2() {
 
-    const [data, setData] = useState(0)
-    const [probNum, setProbNum] = useState(0)
     const navigate = useNavigate()
     const { problemNumber } = useParams()
+    const [data, setData] = useState(ProblemProfileData[problemNumber])
+    const [probNum, setProbNum] = useState(problemNumber)
 
     useEffect(() => {
         // Get data for the header card. The data for the children can be retrieved from the ProblemCard component in a useEffect

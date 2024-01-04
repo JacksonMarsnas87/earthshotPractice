@@ -1,7 +1,7 @@
 import "../ProblemProfileCountry.css";
 import ProgressBar from "./ProgressBar";
 import Collapsible from 'react-collapsible';
-import { ResponsiveContainer, CartesianGrid, XAxis, YAxis, Label, BarChart, Bar, LineChart, Line } from "recharts";
+import { ResponsiveContainer, CartesianGrid, XAxis, YAxis, Label, BarChart, Bar, LineChart, Line, Legend } from "recharts";
 import { BsChevronDown } from "react-icons/bs";
 import TestData from "../testdata/TestData";
 import TestDataLine from "../testdata/TestDataLineGraph";
@@ -10,15 +10,50 @@ import { useState, useEffect } from "react";
 function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
 
   const [width, setWidth] = useState(window.innerWidth);
-  const [barGraphData, setBarGraphData] = useState(0)
-  const [lineGraphData, setLineGraphData] = useState(0)
+  const [firstGraphData, setFirstGraphData] = useState(0)
+  const [secondGraphData, setSecondGraphData] = useState(0)
   const tinyScreenWidth = 600;
   
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
-    setBarGraphData(graphData[data.graphDataNumber].barGraphData)
-    setLineGraphData(graphData[data.graphDataNumber].lineGraphData)
+    setFirstGraphData(graphData[data.graphDataNumber][0])
+    setSecondGraphData(graphData[data.graphDataNumber][1])
   }, [])
+
+  const getGraphType = (graphData) => {
+    switch(graphData.type) {
+      case "bar":
+        return <BarChart data={graphData.data}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <YAxis stroke="white">
+                  <Label value={graphData.yAxisLabel} position="insideLeft" angle={270} dy={70} fill="white" />
+                </YAxis>
+                <Legend />
+
+                {
+                  graphData.labels.map((label) => (
+                    <Bar dataKey={label.name} fill={label.colour} />
+                  ))
+                }
+              </BarChart>
+      case "line":
+        return <LineChart data={graphData.data}>
+                <CartesianGrid strokeDasharray={"3 3"} />
+                <XAxis dataKey="key" stroke="white" height={50}>
+                  <Label value={graphData.xAxisLabel} position="insideBottom" fill="white" />
+                </XAxis>
+                <YAxis stroke="white">
+                  <Label value={graphData.yAxisLabel} position="insideLeft" angle={270} dy={60} fill="white" />
+                </YAxis>
+
+                {
+                  graphData.labels.map((label) => (
+                    <Line type="monotone" dataKey={label.name} stroke={label.colour} />
+                  ))
+                }
+              </LineChart>
+    }
+  }
 
     return (
         <div className={width <= tinyScreenWidth ? "TinyCard" : "Card"}>
@@ -28,19 +63,8 @@ function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
             <p className="Summary">{data.summary}</p>
 
             <ResponsiveContainer width="99%" height={200} style={{marginTop: "20px", marginBottom: "20px", display: "flex", flexDirection: "column"}}>
-              <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{barGraphData.title}</p>
-              <BarChart data={barGraphData.data}>
-                <CartesianGrid strokeDasharray="3 3" />
-                {/* <XAxis dataKey="name" />
-                <YAxis /> */}
-                <XAxis dataKey="name" stroke="white" height={50}>
-                  <Label value={barGraphData.xAxisLabel} position="insideBottom" fill="white" />
-                </XAxis>
-                <YAxis stroke="white">
-                  <Label value={barGraphData.yAxisLabel} position="insideLeft" angle={270} dy={70} fill="white" />
-                </YAxis>
-                <Bar dataKey={"value"} fill="#282c34" />
-              </BarChart>
+              <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{firstGraphData.title}</p>
+              {getGraphType(firstGraphData)}
             </ResponsiveContainer>
           </div>
           
@@ -67,17 +91,8 @@ function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
 
             <p className="DropdownText">{data.causes.mainCause}</p>
             <ResponsiveContainer width="99%" height={200} style={{marginTop: "20px", marginBottom: "60px", display: "flex", flexDirection: "column"}}>
-            <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{lineGraphData.title}</p>
-              <LineChart data={lineGraphData.data}>
-                <CartesianGrid strokeDasharray={"3 3"} />
-                <XAxis dataKey="distance" stroke="white" height={50}>
-                  <Label value={lineGraphData.xAxisLabel} position="insideBottom" fill="white" />
-                </XAxis>
-                <YAxis stroke="white">
-                  <Label value={lineGraphData.yAxisLabel} position="insideLeft" angle={270} dy={60} fill="white" />
-                </YAxis>
-                <Line type="monotone" dataKey="rate" stroke="#34b4eb" />
-              </LineChart>
+              <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{secondGraphData.title}</p>
+              {getGraphType(secondGraphData)}
             </ResponsiveContainer>
             <p className="DropdownText">{data.causes.closingPoint}</p>
           </Collapsible>

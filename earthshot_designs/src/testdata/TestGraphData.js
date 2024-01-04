@@ -1,34 +1,81 @@
 const TestGraphData = {
     // The 0 represents the problemProfileNumber. The indices within the 0 represent graphDataNumber
     0: [
-        {
-            barGraphData: {
+        [
+            {
+                type: "bar",
+                labels: [
+                    {name: "Global", colour: "#282c34"},
+                    {name: "India", colour: "#5e00bd"},
+                    {name: "Impoverished", colour: "#008518"}
+                ],
                 data: [
-                    {name: "Global average", value: 10},
-                    {name: "Indian average", value: 20},
-                    {name: "Impoverished avg.", value: 40}
+                    {name: "Cancer average in different regions", "Global": 10, "India": 20, "Impoverished": 40}
                 ],
                 title: "Average cancer cases/1000 people",
                 xAxisLabel: "Location",
                 yAxisLabel: "Cases/1000 people"
-            }, lineGraphData: {
+            },  {
+                type: "line",
+                labels: [
+                    {name: "Impoverished", colour: "#5e00bd"}
+                ],
                 data: [
-                    {distance: "10", rate: "100"},
-                    {distance: "20", rate: "90"},
-                    {distance: "30", rate: "81"},
-                    {distance: "40", rate: "69"},
-                    {distance: "50", rate: "65"},
-                    {distance: "60", rate: "53"},
-                    {distance: "70", rate: "45"},
-                    {distance: "80", rate: "41"},
-                    {distance: "90", rate: "38"},
-                    {distance: "100", rate: "31"}
+                    {name: "10", "Impoverished": "100"},
+                    {name: "20", "Impoverished": "90"},
+                    {name: "30", "Impoverished": "81"},
+                    {name: "40", "Impoverished": "69"},
+                    {name: "50", "Impoverished": "65"},
+                    {name: "60", "Impoverished": "53"},
+                    {name: "70", "Impoverished": "45"},
+                    {name: "80", "Impoverished": "41"},
+                    {name: "90", "Impoverished": "38"},
+                    {name: "100", "Impoverished": "31"}
                 ],
                 title: "Cancer cases in proximity to mining facilities",
                 xAxisLabel: "Distnace from mining facility (kM)",
                 yAxisLabel: "Cases/1000 people"
             }
-        }
+        ]
+    ],
+
+    1: [
+        [
+            {
+                type: "bar",
+                labels: [
+                    {name: "Global", colour: "#282c34"},
+                    {name: "India", colour: "#5e00bd"},
+                    {name: "Impoverished", colour: "#008518"}
+                ],
+                data: [
+                    {name: "Cancer average in different regions", "Global": 10, "India": 20, "Impoverished": 40}
+                ],
+                title: "Average cancer cases/1000 people",
+                xAxisLabel: "Location",
+                yAxisLabel: "Cases/1000 people"
+            },  {
+                type: "line",
+                labels: [
+                    {name: "Impoverished", colour: "#5e00bd"}
+                ],
+                data: [
+                    {name: "10", "Impoverished": "100"},
+                    {name: "20", "Impoverished": "90"},
+                    {name: "30", "Impoverished": "81"},
+                    {name: "40", "Impoverished": "69"},
+                    {name: "50", "Impoverished": "65"},
+                    {name: "60", "Impoverished": "53"},
+                    {name: "70", "Impoverished": "45"},
+                    {name: "80", "Impoverished": "41"},
+                    {name: "90", "Impoverished": "38"},
+                    {name: "100", "Impoverished": "31"}
+                ],
+                title: "Cancer cases in proximity to mining facilities",
+                xAxisLabel: "Distnace from mining facility (kM)",
+                yAxisLabel: "Cases/1000 people"
+            }
+        ]
     ]
 }
 

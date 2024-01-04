@@ -43,7 +43,7 @@ let CountryData = {
         },
 
         {
-            graphDataNumber: 0,
+            graphDataNumber: 1,
             title: "Food related illness is drastically higher in Kenya when compared to the global average. However, the data shows that this illness is usually contained within communities that are geographically close.",
             summary: "Communities that are close geographically tend to show the same common food related illnesses. This is likely a result of poor growing/manufacturing conditions of food in those areas, which is then shipped to the mentioned communities. Many are hospitalized as a result. This continues to be an issue despite the fact that it can be easily fixed.",
             causes: {

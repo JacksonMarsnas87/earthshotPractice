@@ -10,8 +10,8 @@ import { useState, useEffect } from "react";
 function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
 
   const [width, setWidth] = useState(window.innerWidth);
-  const [firstGraphData, setFirstGraphData] = useState(0)
-  const [secondGraphData, setSecondGraphData] = useState(0)
+  const [firstGraphData, setFirstGraphData] = useState(graphData[data.graphDataNumber][0])
+  const [secondGraphData, setSecondGraphData] = useState(graphData[data.graphDataNumber][1])
   const tinyScreenWidth = 600;
   
   useEffect(() => {

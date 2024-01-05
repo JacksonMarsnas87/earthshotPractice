@@ -1,14 +1,19 @@
 import "../../NavPage.css"
 import CategoryButton from "./CategoryButton";
 import NavCard from "./NavCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import NavCardData from "../../testdata/NavCardData";
+import { CategoryContext } from "../../helpers/CategoryContext";
 
 function NavPage() {
 
-  const [category, setCategory] = useState("All")
-  const [data, setData] = useState(NavCardData)
+  // Category has to be set globally in order for it to maintain between route switches
+  // data and setData should be in the useContext as well. As of right now, they are "reset" whenever the page re-renders. This would be expensive if we were getting this info from an API
+  // I'm not sure if there is a better way to do this. This feels bad, but it is the best solution I could find to maintain filter state between routes
+  // const [category, setCategory] = useState("All")
+  // const [data, setData] = useState(NavCardData)
+  const {category, setCategory, data, setData} = useContext(CategoryContext)
 
   useEffect(() => {
     const filteredData = NavCardData.filter(cardData => category === "All" ? true : cardData.category === category)

@@ -2,24 +2,30 @@ import './App.css';
 import Design1 from './components/Design1';
 import Design2 from './components/Design2';
 import NavPage from './components/NavComponents/NavPage';
+import NavCardData from './testdata/NavCardData';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import ResetScroll from './helpers/ResetScroll';
+import { CategoryContext } from './helpers/CategoryContext';
 
 function App() {
 
   const [page, setPage] = useState(1)
+  const [category, setCategory] = useState("All")
+  const [data, setData] = useState(NavCardData)
 
   return (
     <div className='App'>
       <BrowserRouter>
-      <ResetScroll />
-        <Routes>
-          {/* This is here temporarily for testing */}
-          <Route path="/" element={<NavPage />} />
-          <Route path="/problemProfile/:problemNumber" element={<Design2 />} />
-          <Route path="/design1" element={<Design1 />} />
-        </Routes>
+        <ResetScroll />
+        <CategoryContext.Provider value={{category, setCategory, data, setData}}>
+          <Routes>
+            {/* This is here temporarily for testing */}
+            <Route path="/" element={<NavPage />} />
+            <Route path="/problemProfile/:problemNumber" element={<Design2 />} />
+            <Route path="/design1" element={<Design1 />} />
+          </Routes>
+        </CategoryContext.Provider>
       </BrowserRouter>
     </div>
 

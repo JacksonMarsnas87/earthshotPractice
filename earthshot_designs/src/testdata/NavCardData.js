@@ -7,59 +7,59 @@ const NavCardData = [
         problemNumber: 0
     },
     {
-        iconName: "heart",
-        title: "Illness caused by industry",
+        iconName: "none",
+        title: "This section is currently under maintenance. Come back soon!",
         category: "Poverty",
-        summary: "Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries.",
+        summary: "This section is currently under maintenance. Come back soon!",
         problemNumber: 1
     },
     {
-        iconName: "heart",
-        title: "Illness caused by industry",
+        iconName: "none",
+        title: "This section is currently under maintenance. Come back soon!",
         category: "Economic",
-        summary: "Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries.",
+        summary: "This section is currently under maintenance. Come back soon!",
         problemNumber: 1
     },
     {
-        iconName: "heart",
-        title: "Illness caused by industry",
+        iconName: "none",
+        title: "This section is currently under maintenance. Come back soon!",
         category: "Hunger",
-        summary: "Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries.",
+        summary: "This section is currently under maintenance. Come back soon!",
         problemNumber: 1
     },
     {
-        iconName: "heart",
-        title: "Illness caused by industry",
+        iconName: "none",
+        title: "This section is currently under maintenance. Come back soon!",
         category: "Education",
-        summary: "Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries.",
+        summary: "This section is currently under maintenance. Come back soon!",
         problemNumber: 1
     },
     {
-        iconName: "heart",
-        title: "Illness caused by industry",
+        iconName: "none",
+        title: "This section is currently under maintenance. Come back soon!",
         category: "Equality",
-        summary: "Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries.",
+        summary: "This section is currently under maintenance. Come back soon!",
         problemNumber: 1
     },
     {
-        iconName: "heart",
-        title: "Illness caused by industry",
+        iconName: "none",
+        title: "This section is currently under maintenance. Come back soon!",
         category: "Energy",
-        summary: "Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries.",
+        summary: "This section is currently under maintenance. Come back soon!",
         problemNumber: 1
     },
     {
-        iconName: "heart",
-        title: "Illness caused by industry",
+        iconName: "none",
+        title: "This section is currently under maintenance. Come back soon!",
         category: "Environmental",
-        summary: "Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries.",
+        summary: "This section is currently under maintenance. Come back soon!",
         problemNumber: 1
     },
     {
-        iconName: "heart",
-        title: "Illness caused by industry",
+        iconName: "none",
+        title: "This section is currently under maintenance. Come back soon!",
         category: "Peace & Justice",
-        summary: "Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries.",
+        summary: "This section is currently under maintenance. Come back soon!",
         problemNumber: 1
     }
 ]

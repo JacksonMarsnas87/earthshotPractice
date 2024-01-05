@@ -1,7 +1,7 @@
 import "../ProblemProfileCountry.css";
 import ProgressBar from "./ProgressBar";
 import Collapsible from 'react-collapsible';
-import renderCustomizedLabel from "../chartHelpers/PieChartLabelGenerator";
+import renderCustomizedLabel from "../helpers/PieChartLabelGenerator";
 import { ResponsiveContainer, CartesianGrid, XAxis, YAxis, Label, BarChart, Bar, LineChart, Line, Legend, PieChart, Pie, Cell } from "recharts";
 import { BsChevronDown } from "react-icons/bs";
 import TestData from "../testdata/TestData";

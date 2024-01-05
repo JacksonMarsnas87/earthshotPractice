@@ -1,16 +1,16 @@
 const NavCardData = [
     {
-        iconName: "none",
-        title: "This section is currently under maintenance. Come back soon!",
+        iconName: "heart",
+        title: "Illness caused by industry",
         category: "Poverty",
-        summary: "This section is currently under maintenance. Come back soon!",
-        problemNumber: 0
+        summary: "Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries.",
+        problemNumber: 1
     },
     {
-        iconName: "none",
-        title: "This section is currently under maintenance. Come back soon!",
+        iconName: "hammer",
+        title: "Economic setbacks due to a lack of skilled workers",
         category: "Economic",
-        summary: "This section is currently under maintenance. Come back soon!",
+        summary: "Many countries suffer economically due to a lack of skilled workers in specialized industries.",
         problemNumber: 0
     },
     {
@@ -54,14 +54,7 @@ const NavCardData = [
         category: "Peace & Justice",
         summary: "This section is currently under maintenance. Come back soon!",
         problemNumber: 0
-    },
-    {
-        iconName: "heart",
-        title: "Illness caused by industry",
-        category: "Poverty",
-        summary: "Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries.",
-        problemNumber: 1
-    },
+    }
 ]
 
 export default NavCardData

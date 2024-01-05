@@ -4,6 +4,7 @@ import Design2 from './components/Design2';
 import NavPage from './components/NavComponents/NavPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
+import ResetScroll from './helpers/ResetScroll';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className='App'>
       <BrowserRouter>
+      <ResetScroll />
         <Routes>
           {/* This is here temporarily for testing */}
           <Route path="/" element={<NavPage />} />

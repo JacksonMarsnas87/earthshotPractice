@@ -1,5 +1,5 @@
 import "../../NavCard.css";
-import { BsFillHeartPulseFill, BsExclamationTriangleFill } from "react-icons/bs";
+import { BsFillHeartPulseFill, BsExclamationTriangleFill, BsHammer } from "react-icons/bs";
 
 function NavCard({ iconName, title, category, summary, colourScheme }) {
 
@@ -7,6 +7,8 @@ function NavCard({ iconName, title, category, summary, colourScheme }) {
         switch(name) {
             case "heart":
                 return <BsFillHeartPulseFill className="CardIcon" style={{color: colourScheme.primary}} />
+            case "hammer":
+                return <BsHammer className="CardIcon" style={{color: colourScheme.primary}} />
             default:
                 return <BsExclamationTriangleFill className="CardIcon" style={{color: colourScheme.primary}} />
         }

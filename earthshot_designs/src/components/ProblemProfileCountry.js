@@ -57,14 +57,12 @@ function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
         return (
           <PieChart>
             <Pie data={graphData.data} dataKey="value" cx="50%" cy="50%" outerRadius={90} fill="#ff0000" labelLine={false} label={renderCustomizedLabel}>
-            
               {
                 graphData.data.map((label, index) => {
                   return <Cell fill={graphData.labels[index].colour} />
                 })
               }
             </Pie>
-
             <Legend />
           </PieChart>
         )
@@ -78,10 +76,18 @@ function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
             <h1 className="Title">{data.title}</h1>
             <p className="Summary">{data.summary}</p>
 
-            <ResponsiveContainer width="99%" height={200} style={{marginTop: "20px", marginBottom: "20px", display: "flex", flexDirection: "column"}}>
-              <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{firstGraphData.title}</p>
-              {getGraphType(firstGraphData)}
-            </ResponsiveContainer>
+            {
+              firstGraphData ? 
+
+              <ResponsiveContainer width="99%" height={200} style={{marginTop: "20px", marginBottom: "20px", display: "flex", flexDirection: "column"}}>
+                <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{firstGraphData.title}</p>
+                {getGraphType(firstGraphData)}
+              </ResponsiveContainer>
+
+              :
+
+              <></>
+            }
           </div>
           
           {/* May want to put each Collapsible into its own component. That would help tidy up this part of the code, but also introduce more components that are really simple */}
@@ -106,10 +112,20 @@ function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
             </ul>
 
             <p className="DropdownText">{data.causes.mainCause}</p>
-            <ResponsiveContainer width="99%" height={300} style={{marginTop: "20px", marginBottom: "60px", display: "flex", flexDirection: "column"}}>
-              <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{secondGraphData.title}</p>
-              {getGraphType(secondGraphData)}
-            </ResponsiveContainer>
+
+            {
+              secondGraphData ? 
+
+              <ResponsiveContainer width="99%" height={300} style={{marginTop: "20px", marginBottom: "60px", display: "flex", flexDirection: "column"}}>
+                <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{secondGraphData.title}</p>
+                {getGraphType(secondGraphData)}
+              </ResponsiveContainer>
+
+              :
+
+              <></>
+            }
+            
             <p className="DropdownText">{data.causes.closingPoint}</p>
           </Collapsible>
 

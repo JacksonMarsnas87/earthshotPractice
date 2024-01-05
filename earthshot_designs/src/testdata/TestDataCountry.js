@@ -1,6 +1,48 @@
 let CountryData = {
     0: [
         {
+            graphDataNumber: 0,
+            title: "Here is some different data.",
+            summary: "This is a test summary.",
+            causes: {
+                headline: "There are so many causes to this tes scenario, including:",
+                points: [
+                    {
+                        title: "Major cause 1",
+                        subpoints: ["Subcause 1", "Subcause 2", "Subcause 3"]
+                    },
+                    {
+                        title: "Major cause 2",
+                        subpoints: ["Subcause 1", "Subcause 2", "Subcause 3"]
+                    }
+                ],
+                mainCause: "Here is some text explaining the main cause.",
+                closingPoint: "This is a closing point explaining the benefits of fixing the main cause."
+            },
+            solutions: {
+                header: "Why hasn’t this been solved? - This is a custom heading for every scenario",
+                reasons: {
+                    header: "Here are some main reasons why this hasn't been solved:",
+                    points: [
+                        "Reason 1",
+                        "Reason 2"
+                    ]
+                },
+                outcomes: {
+                    header: "Who wins and who loses? This header explains in some detail, which the points below explain further.",
+                    points: [
+                        "Point 1",
+                        "Point 2",
+                        "Point 3"
+                    ]
+                }
+            },
+            recommendations: "This is a recommendation."
+        }
+    ],
+
+    1: [
+        {
             // graphDataNumber can be used alongside problemNumber to retrieve graphing data. However, if we are mapping over problem profiles this may be unescesary, as this is essentially just an index
             graphDataNumber: 0,
             title: "Cancer rates in India are 20% higher than the global average. This rate is even worse in more impoverished parts of the country.",
@@ -82,48 +124,6 @@ let CountryData = {
             recommendations: "Improvements in food safety standards in rural communities has shown decreases of food related illness of nearly 70%. Higher standards require no new research or technology. Known standards can be implemented, and while the costs are steep, it is worth the investment to keep communities safe."
         }
     ],
-
-    1: [
-        {
-            graphDataNumber: 0,
-            title: "Here is some different data.",
-            summary: "This is a test summary.",
-            causes: {
-                headline: "There are so many causes to this tes scenario, including:",
-                points: [
-                    {
-                        title: "Major cause 1",
-                        subpoints: ["Subcause 1", "Subcause 2", "Subcause 3"]
-                    },
-                    {
-                        title: "Major cause 2",
-                        subpoints: ["Subcause 1", "Subcause 2", "Subcause 3"]
-                    }
-                ],
-                mainCause: "Here is some text explaining the main cause.",
-                closingPoint: "This is a closing point explaining the benefits of fixing the main cause."
-            },
-            solutions: {
-                header: "Why hasn’t this been solved? - This is a custom heading for every scenario",
-                reasons: {
-                    header: "Here are some main reasons why this hasn't been solved:",
-                    points: [
-                        "Reason 1",
-                        "Reason 2"
-                    ]
-                },
-                outcomes: {
-                    header: "Who wins and who loses? This header explains in some detail, which the points below explain further.",
-                    points: [
-                        "Point 1",
-                        "Point 2",
-                        "Point 3"
-                    ]
-                }
-            },
-            recommendations: "This is a recommendation."
-        }
-    ]
 }
 
 export default CountryData;

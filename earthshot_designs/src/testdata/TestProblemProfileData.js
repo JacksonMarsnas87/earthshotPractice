@@ -1,14 +1,14 @@
 const ProblemProfileData = {
     0: {
         number: 0,
-        header: "FOREST & UMBRELLA",
-        title: "Bad water & sanitation"
+        header: "TEST & DATA",
+        title: "This is a test scenario"
     },
 
     1: {
         number: 1,
-        header: "TEST & DATA",
-        title: "This is a test scenario"
+        header: "FOREST & UMBRELLA",
+        title: "Bad water & sanitation"
     },
 }
 

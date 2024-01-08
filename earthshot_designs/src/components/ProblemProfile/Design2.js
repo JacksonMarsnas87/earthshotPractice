@@ -1,6 +1,6 @@
 import ProblemCard from "./ProblemCard";
 import { useState, useEffect } from "react";
-import ProblemProfileData from "../testdata/TestProblemProfileData";
+import ProblemProfileData from "../../testdata/TestProblemProfileData";
 import { useNavigate, useParams } from "react-router-dom";
 
 function Design2() {

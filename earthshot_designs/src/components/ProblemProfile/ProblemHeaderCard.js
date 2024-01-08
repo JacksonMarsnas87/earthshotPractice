@@ -1,5 +1,5 @@
-import "../ProblemHeaderCard.css"
-import ProgressBar from "./ProgressBar";
+import "../../styles/ProblemHeaderCard.css"
+import ProgressBar from "../ProgressBar";
 
 function ProblemHeaderCard({ header, title, summary, details, progressBarLabels }) {
     return (

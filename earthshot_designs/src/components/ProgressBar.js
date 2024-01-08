@@ -1,4 +1,4 @@
-import "../ProgressBar.css"
+import "../styles/ProgressBar.css"
 
 function ProgressBar({ label, colour }) {
     // A colour MUST be passed as a prop. This should probably be changed to predefined values (ie. "HIGH" is always green, "MED" is always yellow, etc.)

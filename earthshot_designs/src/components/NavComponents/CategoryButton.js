@@ -1,4 +1,4 @@
-import "../../CategoryButton.css";
+import "../../styles/CategoryButton.css";
 
 function CategoryButton({ text, colour, category, setCategory }) {
 

@@ -1,5 +1,5 @@
-import "../OutcomeCard.css"
-import ProgressBar from "./ProgressBar";
+import "../../styles/OutcomeCard.css"
+import ProgressBar from "../ProgressBar";
 
 function OutcomeCard({ outcomeNumber, title, description, summary }) {
     return (

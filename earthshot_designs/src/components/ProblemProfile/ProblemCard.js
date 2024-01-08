@@ -1,10 +1,10 @@
 import ProblemHeaderCard from "./ProblemHeaderCard";
-import bycountry from "../images/bycountry.png";
+import bycountry from "../../images/bycountry.png";
 import ProblemProfileCountry from "./ProblemProfileCountry";
-import CountryData from "../testdata/TestDataCountry";
-import TestGraphData from "../testdata/TestGraphData";
+import CountryData from "../../testdata/TestDataCountry";
+import TestGraphData from "../../testdata/TestGraphData";
 import { useState, useEffect } from "react";
-import "../ProblemCard.css"
+import "../../styles/ProblemCard.css"
 
 // ALL data should be sent here, including the main card (header, title) AND child cards
 function ProblemCard({ header, title, problemNumber }) {

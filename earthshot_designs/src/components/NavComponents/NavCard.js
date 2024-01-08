@@ -1,4 +1,4 @@
-import "../../NavCard.css";
+import "../../styles/NavCard.css";
 import { BsFillHeartPulseFill, BsExclamationTriangleFill, BsHammer } from "react-icons/bs";
 
 function NavCard({ iconName, title, category, summary, colourScheme }) {

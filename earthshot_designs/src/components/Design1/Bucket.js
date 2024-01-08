@@ -1,5 +1,5 @@
-import "../Bucket.css"
-import ProgressBar from "./ProgressBar";
+import "../../styles/Bucket.css"
+import ProgressBar from "../ProgressBar";
 
 function Bucket( {number, stat, background, barLabels} ) {
     return (

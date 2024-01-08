@@ -1,11 +1,11 @@
-import "../ProblemProfileCountry.css";
-import ProgressBar from "./ProgressBar";
+import "../../styles/ProblemProfileCountry.css";
+import ProgressBar from "../ProgressBar";
 import Collapsible from 'react-collapsible';
-import renderCustomizedLabel from "../helpers/PieChartLabelGenerator";
+import renderCustomizedLabel from "../../helpers/PieChartLabelGenerator";
 import { ResponsiveContainer, CartesianGrid, XAxis, YAxis, Label, BarChart, Bar, LineChart, Line, Legend, PieChart, Pie, Cell } from "recharts";
 import { BsChevronDown } from "react-icons/bs";
-import TestData from "../testdata/TestData";
-import TestDataLine from "../testdata/TestDataLineGraph";
+import TestData from "../../testdata/TestData";
+import TestDataLine from "../../testdata/TestDataLineGraph";
 import { useState, useEffect } from "react";
 
 function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {

@@ -1,4 +1,4 @@
-import "../../NavPage.css"
+import "../../styles/NavPage.css"
 import CategoryButton from "./CategoryButton";
 import NavCard from "./NavCard";
 import { useState, useEffect, useContext } from "react";

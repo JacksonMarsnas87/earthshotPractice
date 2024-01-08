@@ -24,47 +24,61 @@ function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
   const getGraphType = (graphData) => {
     switch(graphData.type) {
       case "bar":
-        return <BarChart data={graphData.data}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <YAxis stroke="white">
-                  <Label value={graphData.yAxisLabel} position="insideLeft" angle={270} dy={70} fill="white" />
-                </YAxis>
-                <Legend />
+        return (
+          <ResponsiveContainer width="99%" height={300} style={{marginTop: "20px", marginBottom: "20px", display: "flex", flexDirection: "column"}}>
+            <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{graphData.title}</p>
+            <BarChart data={graphData.data}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <YAxis stroke="white">
+                <Label value={graphData.yAxisLabel} position="insideLeft" angle={270} dy={70} fill="white" />
+              </YAxis>
+              <Legend wrapperStyle={{paddingTop: "20px"}} />
 
-                {
-                  graphData.labels.map((label) => (
-                    <Bar dataKey={label.name} fill={label.colour} />
-                  ))
-                }
-              </BarChart>
+              {
+                graphData.labels.map((label) => (
+                  <Bar dataKey={label.name} fill={label.colour} />
+                ))
+              }
+            </BarChart>
+          </ResponsiveContainer>
+        )
       case "line":
-        return <LineChart data={graphData.data}>
-                <CartesianGrid strokeDasharray={"3 3"} />
-                <XAxis dataKey="key" stroke="white" height={50}>
-                  <Label value={graphData.xAxisLabel} position="insideBottom" fill="white" />
-                </XAxis>
-                <YAxis stroke="white">
-                  <Label value={graphData.yAxisLabel} position="insideLeft" angle={270} dy={60} fill="white" />
-                </YAxis>
+        return (
+          <ResponsiveContainer width="99%" height={300} style={{marginTop: "20px", marginBottom: "60px", display: "flex", flexDirection: "column"}}>
+            <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{graphData.title}</p>
+            <LineChart data={graphData.data}>
+              <CartesianGrid strokeDasharray={"3 3"} />
+              {/* <XAxis dataKey="key" stroke="white" height={50}>
+                <Label value={graphData.xAxisLabel} position="insideBottom" fill="white" />
+              </XAxis> */}
+              <YAxis stroke="white">
+                <Label value={graphData.yAxisLabel} position="insideLeft" angle={270} dy={60} fill="white" />
+              </YAxis>
+              <Legend wrapperStyle={{paddingTop: "20px"}} />
 
-                {
-                  graphData.labels.map((label) => (
-                    <Line type="monotone" dataKey={label.name} stroke={label.colour} />
-                  ))
-                }
-              </LineChart>
+              {
+                graphData.labels.map((label) => (
+                  <Line type="monotone" dataKey={label.name} stroke={label.colour} />
+                ))
+              }
+            </LineChart>
+          </ResponsiveContainer>
+        )
       case "pie":
         return (
-          <PieChart>
-            <Pie data={graphData.data} dataKey="value" cx="50%" cy="50%" outerRadius={90} fill="#ff0000" labelLine={false} label={renderCustomizedLabel}>
-              {
-                graphData.data.map((label, index) => {
-                  return <Cell fill={graphData.labels[index].colour} />
-                })
-              }
-            </Pie>
-            <Legend />
-          </PieChart>
+          <ResponsiveContainer width="99%" height={300} style={{marginTop: "20px", marginBottom: "90px", display: "flex", flexDirection: "column"}}>
+            <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{graphData.title}</p>
+            <PieChart>
+              <Pie data={graphData.data} dataKey="value" cx="50%" cy="50%" outerRadius={90} fill="#ff0000" labelLine={false} label={renderCustomizedLabel}>
+                {
+                  graphData.data.map((label, index) => {
+                    return <Cell fill={graphData.labels[index].colour} />
+                  })
+                }
+              </Pie>
+              <Legend />
+            </PieChart>
+          </ResponsiveContainer>
         )
     }
   }
@@ -79,11 +93,8 @@ function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
             {
               firstGraphData ? 
 
-              <ResponsiveContainer width="99%" height={200} style={{marginTop: "20px", marginBottom: "20px", display: "flex", flexDirection: "column"}}>
-                <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{firstGraphData.title}</p>
-                {getGraphType(firstGraphData)}
-              </ResponsiveContainer>
-
+              getGraphType(firstGraphData)
+              
               :
 
               <></>
@@ -116,10 +127,7 @@ function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
             {
               secondGraphData ? 
 
-              <ResponsiveContainer width="99%" height={300} style={{marginTop: "20px", marginBottom: "60px", display: "flex", flexDirection: "column"}}>
-                <p style={{fontSize: "1.1rem", marginLeft: "auto", marginRight: "auto", marginBottom: "10px"}}>{secondGraphData.title}</p>
-                {getGraphType(secondGraphData)}
-              </ResponsiveContainer>
+              getGraphType(secondGraphData)
 
               :
 

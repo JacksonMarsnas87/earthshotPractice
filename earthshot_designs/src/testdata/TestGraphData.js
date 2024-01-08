@@ -25,19 +25,19 @@ const TestGraphData = {
             },  {
                 type: "line",
                 labels: [
-                    {name: "Impoverished", colour: "#5e00bd"}
+                    {name: "Distance (km)", colour: "#5e00bd"}
                 ],
                 data: [
-                    {name: "10", "Impoverished": "100"},
-                    {name: "20", "Impoverished": "90"},
-                    {name: "30", "Impoverished": "81"},
-                    {name: "40", "Impoverished": "69"},
-                    {name: "50", "Impoverished": "65"},
-                    {name: "60", "Impoverished": "53"},
-                    {name: "70", "Impoverished": "45"},
-                    {name: "80", "Impoverished": "41"},
-                    {name: "90", "Impoverished": "38"},
-                    {name: "100", "Impoverished": "31"}
+                    {name: "10", "Distance (km)": "100"},
+                    {name: "20", "Distance (km)": "90"},
+                    {name: "30", "Distance (km)": "81"},
+                    {name: "40", "Distance (km)": "69"},
+                    {name: "50", "Distance (km)": "65"},
+                    {name: "60", "Distance (km)": "53"},
+                    {name: "70", "Distance (km)": "45"},
+                    {name: "80", "Distance (km)": "41"},
+                    {name: "90", "Distance (km)": "38"},
+                    {name: "100", "Distance (km)": "31"}
                 ],
                 title: "Cancer cases in proximity to mining facilities",
                 xAxisLabel: "Distnace from mining facility (kM)",

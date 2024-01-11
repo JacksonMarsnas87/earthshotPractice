@@ -5,6 +5,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import NavCardData from "../../testdata/NavCardData";
 import { CategoryContext } from "../../helpers/CategoryContext";
+import NavCardRoutes from "../../api/NavCardData";
 
 function NavPage() {
 
@@ -14,6 +15,16 @@ function NavPage() {
   // const [category, setCategory] = useState("All")
   // const [data, setData] = useState(NavCardData)
   const {category, setCategory, data, setData} = useContext(CategoryContext)
+  const [navCardData, setNavCardData] = useState([])
+
+  const getNavCardData = async () => {
+    const res = await NavCardRoutes.getNavCardData()
+    setNavCardData(res.data)
+  }
+  
+  useEffect(() => {
+    getNavCardData()
+  }, [])
 
   useEffect(() => {
     const filteredData = NavCardData.filter(cardData => category === "All" ? true : cardData.category === category)
@@ -63,17 +74,18 @@ function NavPage() {
 
         <div className="NavCardContainer">
           {
-            data.map(cardData => (
+            navCardData.length > 0 ?
+
+            navCardData.map(cardData => (
               <Link className="CardLink" to={`problemProfile/${cardData.problemNumber}`} style={{textDecoration: "none", color: "#000"}}>
                 <NavCard iconName={cardData.iconName} title={cardData.title} category={cardData.category} summary={cardData.summary} colourScheme={getColoursFromCategory(cardData.category)} />
               </Link>
             ))
-          }
 
-          {/* <NavCard icon={getIconFromName("heart")} title="Illness caused by industry" category="Poverty" summary="Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries." colourScheme={getColoursFromCategory("Poverty")} />
-          <NavCard icon={getIconFromName("heart")} title="Illness caused by industry" category="Poverty" summary="Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries." colourScheme={getColoursFromCategory("Poverty")} />
-          <NavCard icon={getIconFromName("heart")} title="Illness caused by industry" category="Poverty" summary="Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries." colourScheme={getColoursFromCategory("Poverty")} />
-          <NavCard icon={getIconFromName("heart")} title="Illness caused by industry" category="Poverty" summary="Many illnesses can be attributed to industries with poor safety standards. This is especially evident in poverty-stricken countries." colourScheme={getColoursFromCategory("Poverty")} /> */}
+            :
+
+            <h1>Loading...</h1>
+          }
         </div>
     </div>
   );

@@ -14,21 +14,26 @@ function NavPage() {
   // I'm not sure if there is a better way to do this. This feels bad, but it is the best solution I could find to maintain filter state between routes
   // const [category, setCategory] = useState("All")
   // const [data, setData] = useState(NavCardData)
-  const {category, setCategory, data, setData} = useContext(CategoryContext)
+  const {category, setCategory, filteredNavCardData, setFilteredNavCardData} = useContext(CategoryContext)
   const [navCardData, setNavCardData] = useState([])
 
+  // API call can be moved to App.js and treated the same as category, setCategory, etc. if needed. As of right now, the API is called on refresh and navigation
+  // Can also try it with react query to cache API results. Would make loading slightly faster
   const getNavCardData = async () => {
     const res = await NavCardRoutes.getNavCardData()
     setNavCardData(res.data)
+    const filteredData = res.data.filter(cardData => category === "All" ? true : cardData.category === category)
+    setFilteredNavCardData(filteredData)
   }
   
   useEffect(() => {
     getNavCardData()
+    setFilteredNavCardData(navCardData)
   }, [])
 
   useEffect(() => {
-    const filteredData = NavCardData.filter(cardData => category === "All" ? true : cardData.category === category)
-    setData(filteredData)
+    const filteredData = navCardData.filter(cardData => category === "All" ? true : cardData.category === category)
+    setFilteredNavCardData(filteredData)
   }, [category])
 
   const getColoursFromCategory = (cardCategory) => {
@@ -74,9 +79,9 @@ function NavPage() {
 
         <div className="NavCardContainer">
           {
-            navCardData.length > 0 ?
+            filteredNavCardData.length > 0 ?
 
-            navCardData.map(cardData => (
+            filteredNavCardData.map(cardData => (
               <Link className="CardLink" to={`problemProfile/${cardData.problemNumber}`} style={{textDecoration: "none", color: "#000"}}>
                 <NavCard iconName={cardData.iconName} title={cardData.title} category={cardData.category} summary={cardData.summary} colourScheme={getColoursFromCategory(cardData.category)} />
               </Link>

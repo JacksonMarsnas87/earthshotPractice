@@ -12,13 +12,13 @@ function App() {
 
   const [page, setPage] = useState(1)
   const [category, setCategory] = useState("All")
-  const [data, setData] = useState(NavCardData)
+  const [filteredNavCardData, setFilteredNavCardData] = useState([])
 
   return (
     <div className='App'>
       <BrowserRouter>
         <ResetScroll />
-        <CategoryContext.Provider value={{category, setCategory, data, setData}}>
+        <CategoryContext.Provider value={{category, setCategory, filteredNavCardData, setFilteredNavCardData}}>
           <Routes>
             <Route path="/" element={<NavPage />} />
             <Route path="/problemProfile/:problemNumber" element={<Design2 />} />

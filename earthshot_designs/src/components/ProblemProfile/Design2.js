@@ -1,25 +1,49 @@
 import ProblemCard from "./ProblemCard";
 import { useState, useEffect } from "react";
-import ProblemProfileData from "../../testdata/TestProblemProfileData";
 import { useNavigate, useParams } from "react-router-dom";
+import ProblemProfileRoutes from "../../api/ProblemProfileData";
 
 function Design2() {
 
+    const getProblemProfileHeaderData = async (problemNumber) => {
+        try {
+            const res = await ProblemProfileRoutes.getProblemProfileHeader(problemNumber)
+
+            if (res) {
+                console.log(res.data)
+                setHeaderData(res.data)
+                return res
+            } else {
+                return null
+            }
+        } catch(err) {
+            return null
+        }
+    }
+
     const navigate = useNavigate()
     const { problemNumber } = useParams()
-    const [data, setData] = useState(ProblemProfileData[problemNumber])
-    const [probNum, setProbNum] = useState(problemNumber)
+    const [headerData, setHeaderData] = useState(null)
 
     useEffect(() => {
-        // Get data for the header card. The data for the children can be retrieved from the ProblemCard component in a useEffect
-        setData(ProblemProfileData[problemNumber])
-        setProbNum(problemNumber)
+        // Get the data for the header card from he backend
+        getProblemProfileHeaderData(problemNumber)
     }, [])
 
     return (
         <div>
-            <button onClick={() => navigate("/design1")}>Navigate to design 1</button>
-            <ProblemCard header={data.header} title={data.title} problemNumber={probNum} />
+            {
+                headerData ?
+
+                <>
+                    <button onClick={() => navigate("/design1")}>Navigate to design 1</button>
+                    <ProblemCard header={headerData.header} title={headerData.title} problemNumber={problemNumber} />
+                </>
+
+                :
+
+                <h1>Loading...</h1>
+            }
         </div>
     );
 }

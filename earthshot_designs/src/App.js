@@ -7,6 +7,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import ResetScroll from './helpers/ResetScroll';
 import { CategoryContext } from './helpers/CategoryContext';
+import { QueryClient, QueryClientProvider } from "react-query"
+
+const queryClient = new QueryClient()
 
 function App() {
 
@@ -19,11 +22,13 @@ function App() {
       <BrowserRouter>
         <ResetScroll />
         <CategoryContext.Provider value={{category, setCategory, filteredNavCardData, setFilteredNavCardData}}>
-          <Routes>
-            <Route path="/" element={<NavPage />} />
-            <Route path="/problemProfile/:problemNumber" element={<Design2 />} />
-            <Route path="/design1" element={<Design1 />} />
-          </Routes>
+          <QueryClientProvider client={queryClient}>
+            <Routes>
+              <Route path="/" element={<NavPage />} />
+              <Route path="/problemProfile/:problemNumber" element={<Design2 />} />
+              <Route path="/design1" element={<Design1 />} />
+            </Routes>
+          </QueryClientProvider>
         </CategoryContext.Provider>
       </BrowserRouter>
     </div>

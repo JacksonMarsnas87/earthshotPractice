@@ -3,38 +3,31 @@ import CategoryButton from "./CategoryButton";
 import NavCard from "./NavCard";
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import NavCardData from "../../testdata/NavCardData";
 import { CategoryContext } from "../../helpers/CategoryContext";
 import NavCardRoutes from "../../api/NavCardData";
+import { useQuery } from "react-query";
 
 function NavPage() {
 
-  // Category has to be set globally in order for it to maintain between route switches
-  // data and setData should be in the useContext as well. As of right now, they are "reset" whenever the page re-renders. This would be expensive if we were getting this info from an API
-  // I'm not sure if there is a better way to do this. This feels bad, but it is the best solution I could find to maintain filter state between routes
-  // const [category, setCategory] = useState("All")
-  // const [data, setData] = useState(NavCardData)
+  // useQuery caches the nav card data from the API. This way the page doesn't have to retrieve he data on navigation, which gives it a "choppy" loading effect
+  const { isLoading, error, data } = useQuery("navCardData", NavCardRoutes.getNavCardData, { 
+    staleTime: 10000,
+    onSuccess: (resData) => {
+      const filteredData = resData.data.filter(cardData => category === "All" ? true : cardData.category === category)
+      setFilteredNavCardData(filteredData)
+    }
+   })
   const {category, setCategory, filteredNavCardData, setFilteredNavCardData} = useContext(CategoryContext)
-  const [navCardData, setNavCardData] = useState([])
-
-  // API call can be moved to App.js and treated the same as category, setCategory, etc. if needed. As of right now, the API is called on refresh and navigation
-  // Can also try it with react query to cache API results. Would make loading slightly faster
-  const getNavCardData = async () => {
-    const res = await NavCardRoutes.getNavCardData()
-    setNavCardData(res.data)
-    const filteredData = res.data.filter(cardData => category === "All" ? true : cardData.category === category)
-    setFilteredNavCardData(filteredData)
-  }
-  
-  useEffect(() => {
-    getNavCardData()
-    setFilteredNavCardData(navCardData)
-  }, [])
 
   useEffect(() => {
-    const filteredData = navCardData.filter(cardData => category === "All" ? true : cardData.category === category)
-    setFilteredNavCardData(filteredData)
+    if (data) {
+      const filteredData = data.data.filter(cardData => category === "All" ? true : cardData.category === category)
+      setFilteredNavCardData(filteredData)
+    }
   }, [category])
+
+  if (isLoading) return <h1>Loading...</h1>
+  if (error) return <h1>An error occurred</h1>
 
   const getColoursFromCategory = (cardCategory) => {
     switch(cardCategory) {

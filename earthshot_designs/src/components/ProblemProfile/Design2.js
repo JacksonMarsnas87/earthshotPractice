@@ -10,7 +10,6 @@ function Design2() {
             const res = await ProblemProfileRoutes.getProblemProfileHeader(problemNumber)
 
             if (res) {
-                console.log(res.data)
                 setHeaderData(res.data)
                 return res
             } else {

@@ -11,14 +11,14 @@ import { useState, useEffect } from "react";
 function ProblemProfileCountry({ header, data, graphData, progressBarLabels }) {
 
   const [width, setWidth] = useState(window.innerWidth);
-  const [firstGraphData, setFirstGraphData] = useState(graphData[data.graphDataNumber][0])
-  const [secondGraphData, setSecondGraphData] = useState(graphData[data.graphDataNumber][1])
+  const [firstGraphData, setFirstGraphData] = useState(graphData[0])
+  const [secondGraphData, setSecondGraphData] = useState(graphData[1])
   const tinyScreenWidth = 600;
   
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
-    setFirstGraphData(graphData[data.graphDataNumber][0])
-    setSecondGraphData(graphData[data.graphDataNumber][1])
+    setFirstGraphData(graphData[0])
+    setSecondGraphData(graphData[1])
   }, [])
 
   const getGraphType = (graphData) => {

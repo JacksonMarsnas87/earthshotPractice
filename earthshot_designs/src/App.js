@@ -2,6 +2,7 @@ import './styles/App.css';
 import Design1 from './components/Design1/Design1';
 import Design2 from './components/ProblemProfile/Design2';
 import NavPage from './components/NavComponents/NavPage';
+import CountryNavPage from './components/CountryNav/CountryNavPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import ResetScroll from './helpers/ResetScroll';
@@ -23,32 +24,15 @@ function App() {
         <CategoryContext.Provider value={{category, setCategory, filteredNavCardData, setFilteredNavCardData}}>
           <QueryClientProvider client={queryClient}>
             <Routes>
-              <Route path="/" element={<NavPage />} />
-              <Route path="/problemProfile/:problemNumber" element={<Design2 />} />
-              <Route path="/design1" element={<Design1 />} />
+              <Route path="/nav" element={<NavPage />} />
+              <Route path="/nav/problemProfile/:problemNumber" element={<Design2 />} />
+              <Route path="/nav/design1" element={<Design1 />} />
+              <Route path="/" element={<CountryNavPage />} />
             </Routes>
           </QueryClientProvider>
         </CategoryContext.Provider>
       </BrowserRouter>
     </div>
-
-    // Leaving this here in case I need to go back on my choice of using routes
-
-    // <div className="App">
-    //   <button onClick={() => setPage(1)}>View design 1</button>
-    //   <button onClick={() => setPage(2)}>View design 2</button>
-      
-    //   <>
-    //     {
-    //       page === 1 ?
-    //       <Design1 />
-
-    //       :
-
-    //       <Design2 />
-    //     }
-    //   </>
-    // </div>
   );
 }
 

@@ -1,0 +1,60 @@
+.CountryNavContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #fdfdfd;
+}
+
+.CountryNavHeaderContainer {
+    width: 100%;
+    background-color: #edede8;
+    display: flex;
+    align-items:flex-start;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 100px;
+}
+
+.CountryNavHeader {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.CountryNavSummary {
+    font-size: 1.15rem;
+    font-weight: 600;
+    width: 80%;
+    max-width: 900px;
+}
+
+.CountryNavFilterContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: left;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #63ceff;
+}
+
+.MoreFiltersContainer {
+    width: 425px;
+    min-width: 425px;
+}
+
+.CountryNavFilterInnerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.CountryNavCardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+}

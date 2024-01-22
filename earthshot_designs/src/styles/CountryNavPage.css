@@ -39,6 +39,8 @@
 }
 
 .MoreFiltersContainer {
+    display: flex;
+    align-items: center;
     width: 425px;
     min-width: 425px;
 }

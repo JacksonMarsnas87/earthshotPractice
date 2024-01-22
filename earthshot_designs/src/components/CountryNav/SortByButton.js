@@ -1,8 +1,8 @@
 import "../../styles/SortByButton.css"
 
-function SortByButton() {
+function SortByButton({ size }) {
   return (
-    <button className="SortByButton">Sort By</button>
+    <button className={size === "normal" ? "SortByButton" : "SortByButtonSmall"}>Sort By</button>
   );
 }
 

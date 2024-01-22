@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../../styles/CountryNavPage.css"
 import CountryNavFilterButton from "./CountryNavFilterButton";
+import CountryNavFilterButtonSmall from "./CountryNavFilterButtonSmall";
 import MoreFiltersButton from "./MoreFiltersButton";
 import SortByButton from "./SortByButton";
 import CountryNavCard from "./CountryNavCard";
@@ -28,8 +29,8 @@ function CountryNavPage() {
 
           <div className="CountryNavFilterContainer">
             <div className="MoreFiltersContainer">
-              <MoreFiltersButton />
-              <SortByButton />
+              <MoreFiltersButton size="normal" />
+              <SortByButton size="normal" />
             </div>
             <div className="CountryNavFilterInnerContainer">
               <CountryNavFilterButton text="North America" filter={filter} setFilter={setFilter} />
@@ -54,18 +55,18 @@ function CountryNavPage() {
             <p className="CountryNavSummarySmall">There are a few metrics used to describe the United Nation’s Least Developed Countries. While every country has its unique challenges, these metrics are common indicators that help may be needed.</p>
           </div>
 
-          <div className="CountryNavFilterContainer">
-            <div className="MoreFiltersContainer">
-              <MoreFiltersButton />
-              <SortByButton />
+          <div className="CountryNavFilterContainerSmall">
+            <div className="MoreFiltersContainerSmall">
+              <MoreFiltersButton size="small" />
+              <SortByButton size="small" />
             </div>
-            <div className="CountryNavFilterInnerContainer">
-              <CountryNavFilterButton text="North America" filter={filter} setFilter={setFilter} />
-              <CountryNavFilterButton text="South America" filter={filter} setFilter={setFilter} />
-              <CountryNavFilterButton text="Europe" filter={filter} setFilter={setFilter} />
-              <CountryNavFilterButton text="Africa" filter={filter} setFilter={setFilter} />
-              <CountryNavFilterButton text="Asia" filter={filter} setFilter={setFilter} />
-              <CountryNavFilterButton text="Oceania" filter={filter} setFilter={setFilter} />
+            <div className="CountryNavFilterInnerContainerSmall">
+              <CountryNavFilterButtonSmall text="North America" filter={filter} setFilter={setFilter} />
+              <CountryNavFilterButtonSmall text="South America" filter={filter} setFilter={setFilter} />
+              <CountryNavFilterButtonSmall text="Europe" filter={filter} setFilter={setFilter} />
+              <CountryNavFilterButtonSmall text="Africa" filter={filter} setFilter={setFilter} />
+              <CountryNavFilterButtonSmall text="Asia" filter={filter} setFilter={setFilter} />
+              <CountryNavFilterButtonSmall text="Oceania" filter={filter} setFilter={setFilter} />
             </div>
           </div>
 

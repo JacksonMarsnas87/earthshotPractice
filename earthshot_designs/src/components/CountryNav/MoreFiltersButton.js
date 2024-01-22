@@ -1,8 +1,8 @@
 import "../../styles/MoreFiltersButton.css"
 
-function MoreFiltersButton() {
+function MoreFiltersButton({ size }) {
   return (
-    <button className="MoreFiltersButton">More Filters</button>
+    <button className={size === "normal" ? "MoreFiltersButton" : "MoreFiltersButtonSmall"}>More Filters</button>
   );
 }
 

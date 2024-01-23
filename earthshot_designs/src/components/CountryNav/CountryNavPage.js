@@ -43,7 +43,11 @@ function CountryNavPage() {
           </div>
 
           <div className="CountryNavCardContainer">
-            <CountryNavCard country="Kenya" continent="Africa" metrics={null} />
+            <CountryNavCard country="Kenya" continent="Africa" metrics={null} imageName="kenya" />
+            <CountryNavCard country="Thailand" continent="Asia" metrics={null} imageName="bangkok-thailand" />
+            <CountryNavCard country="Thailand" continent="Asia" metrics={null} imageName="bangkok-thailand" />
+            <CountryNavCard country="Thailand" continent="Asia" metrics={null} imageName="bangkok-thailand" />
+            <CountryNavCard country="Thailand" continent="Asia" metrics={null} imageName="bangkok-thailand" />
           </div>
         </div>
 
@@ -71,7 +75,8 @@ function CountryNavPage() {
           </div>
 
           <div className="CountryNavCardContainer">
-            <CountryNavCard country="Kenya" continent="Africa" metrics={null} />
+            <CountryNavCard country="Kenya" continent="Africa" metrics={null} imageName="kenya" />
+            <CountryNavCard country="Thailand" continent="Asia" metrics={null} imageName="bangkok-thailand" />
           </div>
         </div>
       }

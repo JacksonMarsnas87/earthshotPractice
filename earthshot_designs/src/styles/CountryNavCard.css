@@ -9,6 +9,8 @@
     border-radius: 12px;
     background-color: #ffffff;
     position: relative;
+    /* This looks nice on full rows, but causes a weird strecthing effect on rows that aren't full */
+    /* flex-grow: 1; */
 }
 
 .CountryNavCardTextContainer {
@@ -38,10 +40,18 @@
     width: 100%;
     height: 100%;
     z-index: 2;
-    /* position: absolute; */
-    /* top: 0; */
-    /* left: 0; */
+    position: absolute;
+    top: 0;
+    left: 0;
     border-radius: 12px;
     filter: brightness(0.8) saturate(1.2);
     object-fit: cover;
+}
+
+.CountryNavCard:hover > .NavCardCountryImage {
+    filter: brightness(0.25)
+}
+
+.CountryNavCard:hover > .CountryNavCardTextContainer {
+    z-index: 1;
 }

@@ -1,9 +1,9 @@
 import "../../styles/MetricBar.css"
 
-function MetricBar() {
+function MetricBar({ isSelected, fill }) {
   return (
     <div className="MetricBarOutter">
-        <div className="MetricBarInner" />
+        <div className={fill <= 33 ? "MetricBarInner red" : fill <= 66 ? "MetricBarInner yellow" : "MetricBarInner green"} style={isSelected ? {"width": `${fill}%`} : {"width": "0%"}} />
     </div>
   );
 }

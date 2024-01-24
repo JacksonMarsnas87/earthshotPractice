@@ -1,5 +1,4 @@
 .MetricBarOutter {
-    /* float: right; */
     width: 60%;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
@@ -11,5 +10,16 @@
     background-color: #2bde73;
     transition: width 0.75s cubic-bezier(0.25, 1, 0.25, 1);
     height: 100%;
-    width: 0%;
+}
+
+.MetricBarInner.green {
+    background-color: #2bde73;
+}
+
+.MetricBarInner.yellow {
+    background-color: #ffc924;
+}
+
+.MetricBarInner.red {
+    background-color: #ff4742;
 }

@@ -18,19 +18,19 @@ function CountryNavCard({ country, continent, metrics, imageName }) {
         <div className="CountryNavCardMetricContainer">
           <div className="CountryNavCardMetricContainerInner">
             <p className="CountryNavCardMetric">Metric1</p>
-            <MetricBar fill={50} isSelected={isSelected} />
+            <MetricBar fill={metrics.metric1} isSelected={isSelected} />
           </div>
           <div className="CountryNavCardMetricContainerInner">
             <p className="CountryNavCardMetric">Metric2</p>
-            <MetricBar fill={10} isSelected={isSelected} />
+            <MetricBar fill={metrics.metric2} isSelected={isSelected} />
           </div>
           <div className="CountryNavCardMetricContainerInner">
             <p className="CountryNavCardMetric">Metric3</p>
-            <MetricBar fill={90} isSelected={isSelected} />
+            <MetricBar fill={metrics.metric3} isSelected={isSelected} />
           </div>
           <div className="CountryNavCardMetricContainerInner">
             <p className="CountryNavCardMetric">Metric4</p>
-            <MetricBar fill={100} isSelected={isSelected} />
+            <MetricBar fill={metrics.metric4} isSelected={isSelected} />
           </div>
         </div>
     </div>

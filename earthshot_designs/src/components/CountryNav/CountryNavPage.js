@@ -5,6 +5,7 @@ import CountryNavFilterButtonSmall from "./CountryNavFilterButtonSmall";
 import MoreFiltersButton from "./MoreFiltersButton";
 import SortByButton from "./SortByButton";
 import CountryNavCard from "./CountryNavCard";
+import TestDataNavCardCountry from "../../testdata/TestDataNavCardCountry";
 
 function CountryNavPage() {
 
@@ -43,11 +44,11 @@ function CountryNavPage() {
           </div>
 
           <div className="CountryNavCardContainer">
-            <CountryNavCard country="Kenya" continent="Africa" metrics={null} imageName="kenya" />
-            <CountryNavCard country="Thailand" continent="Asia" metrics={null} imageName="bangkok-thailand" />
-            <CountryNavCard country="Thailand" continent="Asia" metrics={null} imageName="bangkok-thailand" />
-            <CountryNavCard country="Thailand" continent="Asia" metrics={null} imageName="bangkok-thailand" />
-            <CountryNavCard country="Thailand" continent="Asia" metrics={null} imageName="bangkok-thailand" />
+            {
+              TestDataNavCardCountry.map((navCardData) => (
+                <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} />
+              ))
+            }
           </div>
         </div>
 

@@ -1,0 +1,15 @@
+.MetricBarOutter {
+    /* float: right; */
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 1.5rem;
+}
+
+.MetricBarInner {
+    background-color: #2bde73;
+    transition: width 0.75s cubic-bezier(0.25, 1, 0.25, 1);
+    height: 100%;
+    width: 0%;
+}

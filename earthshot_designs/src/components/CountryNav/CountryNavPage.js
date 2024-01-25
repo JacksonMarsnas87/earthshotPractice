@@ -14,7 +14,8 @@ function CountryNavPage() {
   const { isLoading, error, data } = useQuery("countryNavCardData", CountryNavCardRoutes.getCountryNavCardData, { 
     staleTime: 10000,
     onSuccess: (resData) => {
-      setCardData(resData.data)
+      const filteredData = resData.data.filter(cardData => !filter ? true : cardData.continent === filter)
+      setCardData(filteredData)
     }
   })
 
@@ -26,6 +27,13 @@ function CountryNavPage() {
   useEffect(() => {
     window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
   }, [])
+
+  useEffect(() => {
+    if (data) {
+      const filteredData = data.data.filter(cardData => !filter ? true : cardData.continent === filter)
+      setCardData(filteredData)
+    }
+  }, [filter])
 
   if (isLoading) return <h1>Loading...</h1>
   if (error) return <h1>An error occurred</h1>
@@ -58,9 +66,17 @@ function CountryNavPage() {
 
           <div className="CountryNavCardContainer">
             {
+              cardData.length ?
+
               cardData.map((navCardData) => (
                 <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} />
               ))
+
+              :
+
+              <div className="NoData">
+                <p>There is no data to display at this time</p>
+              </div>
             }
           </div>
         </div>
@@ -90,9 +106,17 @@ function CountryNavPage() {
 
           <div className="CountryNavCardContainerSmall">
             {
+              cardData.length ?
+
               cardData.map((navCardData) => (
                 <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} />
               ))
+
+              :
+
+              <div className="NoDataSmall">
+                <p>There is no data to display at this time</p>
+              </div>
             }
           </div>
         </div>

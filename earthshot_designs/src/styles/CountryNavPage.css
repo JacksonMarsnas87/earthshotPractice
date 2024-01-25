@@ -59,7 +59,9 @@
     gap: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    justify-content: center;
 }
 
 
@@ -111,4 +113,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.CountryNavCardContainerSmall {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    margin: 20px;
 }

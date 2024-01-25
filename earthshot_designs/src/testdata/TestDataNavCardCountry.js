@@ -20,6 +20,28 @@ const TestDataNavCardCountry = [
             metric4: 50,
         },
         imageName: "bangkok-thailand"
+    },
+    {
+        country: "Thailand",
+        continent: "Asia",
+        metrics: {
+            metric1: 50,
+            metric2: 50,
+            metric3: 50,
+            metric4: 50,
+        },
+        imageName: "bangkok-thailand"
+    },
+    {
+        country: "Thailand",
+        continent: "Asia",
+        metrics: {
+            metric1: 50,
+            metric2: 50,
+            metric3: 50,
+            metric4: 50,
+        },
+        imageName: "bangkok-thailand"
     }
 ]
 

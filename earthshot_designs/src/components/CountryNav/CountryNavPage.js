@@ -6,16 +6,29 @@ import MoreFiltersButton from "./MoreFiltersButton";
 import SortByButton from "./SortByButton";
 import CountryNavCard from "./CountryNavCard";
 import TestDataNavCardCountry from "../../testdata/TestDataNavCardCountry";
+import CountryNavCardRoutes from "../../api/CountryNavCardData";
+import { useQuery } from "react-query";
 
 function CountryNavPage() {
+
+  const { isLoading, error, data } = useQuery("countryNavCardData", CountryNavCardRoutes.getCountryNavCardData, { 
+    staleTime: 10000,
+    onSuccess: (resData) => {
+      setCardData(resData.data)
+    }
+  })
 
   const smallScreenSize = 820
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [filter, setFilter] = useState(null)
+  const [cardData, setCardData] = useState(null)
 
   useEffect(() => {
     window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
   }, [])
+
+  if (isLoading) return <h1>Loading...</h1>
+  if (error) return <h1>An error occurred</h1>
 
   return (
     <>
@@ -45,7 +58,7 @@ function CountryNavPage() {
 
           <div className="CountryNavCardContainer">
             {
-              TestDataNavCardCountry.map((navCardData) => (
+              cardData.map((navCardData) => (
                 <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} />
               ))
             }
@@ -77,7 +90,7 @@ function CountryNavPage() {
 
           <div className="CountryNavCardContainerSmall">
             {
-              TestDataNavCardCountry.map((navCardData) => (
+              cardData.map((navCardData) => (
                 <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} />
               ))
             }

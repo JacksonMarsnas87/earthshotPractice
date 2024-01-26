@@ -3,12 +3,13 @@ import bangkok from "../../images/countryImages/bangkok-thailand.jpg"
 import MetricBar from "./MetricBar";
 import { useState } from "react";
 
-function CountryNavCard({ country, continent, metrics, imageName }) {
+function CountryNavCard({ country, continent, metrics, imageName, ranking }) {
 
   const [isSelected, setIsSelected] = useState(false)
   
   return (
     <div className="CountryNavCard" onMouseEnter={() => setIsSelected(true)} onMouseLeave={() => setIsSelected(false)}>
+        <p className="CountryRank">{ranking}</p>
         <div className="CountryNavCardTextContainer">
           <h1 className="NavCardCountryName">{country}</h1>
           <p className="NavCardCountryContinent">{continent}</p>

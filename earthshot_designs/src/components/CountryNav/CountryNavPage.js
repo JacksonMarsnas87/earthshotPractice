@@ -68,8 +68,8 @@ function CountryNavPage() {
             {
               cardData.length ?
 
-              cardData.map((navCardData) => (
-                <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} />
+              cardData.map((navCardData, index) => (
+                <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} ranking={index + 1} />
               ))
 
               :
@@ -108,8 +108,8 @@ function CountryNavPage() {
             {
               cardData.length ?
 
-              cardData.map((navCardData) => (
-                <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} />
+              cardData.map((navCardData, index) => (
+                <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} ranking={index + 1} />
               ))
 
               :

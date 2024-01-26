@@ -77,6 +77,10 @@
     z-index: 1;
 }
 
+.CountryNavCard:hover > .CountryRank {
+    z-index: 1;
+}
+
 .CountryNavCard:hover > .CountryNavCardMetricContainer {
     z-index: 3;
 }
@@ -84,4 +88,18 @@
 .CountryNavCardMetric {
     font-size: 15px;
     width: 40%;
+}
+
+.CountryRank {
+    top: 0;
+    left: 0;
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    position: absolute;
+    margin: 1rem;
+    z-index: 3;
+    border-bottom: 2px solid white;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }

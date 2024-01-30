@@ -14,7 +14,12 @@ function CountryNavPage() {
   const { isLoading, error, data } = useQuery("countryNavCardData", CountryNavCardRoutes.getCountryNavCardData, { 
     staleTime: 10000,
     onSuccess: (resData) => {
-      const filteredData = resData.data.filter(cardData => !filter ? true : cardData.continent === filter)
+      let filteredData = resData.data.filter(cardData => !filter ? true : cardData.continent === filter)
+      if (sortOptions) {
+        filteredData = filteredData.toSorted((a, b) => {
+          return a["metrics"][sortOptions] - b["metrics"][sortOptions]
+        })
+      }
       setCardData(filteredData)
     }
   })
@@ -22,6 +27,7 @@ function CountryNavPage() {
   const smallScreenSize = 820
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [filter, setFilter] = useState(null)
+  const [sortOptions, setSortOptions] = useState(null)
   const [cardData, setCardData] = useState(null)
 
   useEffect(() => {
@@ -30,10 +36,25 @@ function CountryNavPage() {
 
   useEffect(() => {
     if (data) {
-      const filteredData = data.data.filter(cardData => !filter ? true : cardData.continent === filter)
+      let filteredData = data.data.filter(cardData => !filter ? true : cardData.continent === filter)
+
+      if (sortOptions) {
+        filteredData = filteredData.toSorted((a, b) => {
+          return a["metrics"][sortOptions] - b["metrics"][sortOptions]
+        })
+      }
+
       setCardData(filteredData)
     }
   }, [filter])
+
+  useEffect(() => {
+    if (data && sortOptions) {
+      setCardData(cardData.toSorted((a, b) => {
+        return a["metrics"][sortOptions] - b["metrics"][sortOptions]
+      }))
+    }
+  }, [sortOptions])
 
   if (isLoading) return <h1>Loading...</h1>
   if (error) return <h1>An error occurred</h1>
@@ -52,7 +73,7 @@ function CountryNavPage() {
           <div className="CountryNavFilterContainer">
             <div className="MoreFiltersContainer">
               <MoreFiltersButton size="normal" />
-              <SortByButton size="normal" />
+              <SortByButton size="normal" setSortOptions={setSortOptions} />
             </div>
             <div className="CountryNavFilterInnerContainer">
               <CountryNavFilterButton text="North America" filter={filter} setFilter={setFilter} />

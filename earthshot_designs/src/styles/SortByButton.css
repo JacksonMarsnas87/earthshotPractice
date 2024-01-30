@@ -59,6 +59,10 @@
 
 
 .SortByButtonSmall {
+    width: 100%;
+}
+
+.SortByButtonSmall > button {
     margin: 7px;
     border: 2px solid;
     border-color: black;
@@ -74,7 +78,7 @@
     height: 36px;
 }
 
-.SortByButtonSmall:hover {
+.SortByButtonSmall > button:hover {
     cursor: pointer;
     background-color: black;
     color: white;

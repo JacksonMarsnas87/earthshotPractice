@@ -113,7 +113,7 @@ function CountryNavPage() {
           <div className="CountryNavFilterContainerSmall">
             <div className="MoreFiltersContainerSmall">
               <MoreFiltersButton size="small" />
-              <SortByButton size="small" />
+              <SortByButton size="small" setSortOptions={setSortOptions} />
             </div>
             <div className="CountryNavFilterInnerContainerSmall">
               <CountryNavFilterButtonSmall text="North America" filter={filter} setFilter={setFilter} />

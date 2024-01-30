@@ -5,9 +5,7 @@ import SortOptions from "../../testdata/CountryNavPageSortOptions";
 
 function SortByButton({ size, setSortOptions }) {
   return (
-    // <button className={size === "normal" ? "SortByButton" : "SortByButtonSmall"}>Sort By</button>
-
-    <Dropdown className="SortByButton">
+    <Dropdown className={size === "normal" ? "SortByButton" : "SortByButtonSmall"}>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
         Sort by
       </Dropdown.Toggle>

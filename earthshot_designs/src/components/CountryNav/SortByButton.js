@@ -3,7 +3,7 @@ import Dropdown from "react-bootstrap/Dropdown"
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import SortOptions from "../../testdata/CountryNavPageSortOptions";
 
-function SortByButton({ size, setSortOptions }) {
+function SortByButton({ size, sortOptions, setSortOptions }) {
   return (
     <Dropdown className={size === "normal" ? "SortByButton" : "SortByButtonSmall"}>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -13,7 +13,7 @@ function SortByButton({ size, setSortOptions }) {
       <Dropdown.Menu>
         {
           SortOptions.map((sortOption) => {
-            return <Dropdown.Item onClick={() => setSortOptions(sortOption)}>{sortOption}</Dropdown.Item>
+            return <Dropdown.Item className={sortOptions === sortOption ? "DropdownItemSelected" : "DropdownItem"} onClick={() => setSortOptions(sortOption)}>{sortOption}</Dropdown.Item>
           })
         }
       </Dropdown.Menu>

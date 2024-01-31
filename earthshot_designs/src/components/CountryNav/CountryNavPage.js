@@ -73,7 +73,7 @@ function CountryNavPage() {
           <div className="CountryNavFilterContainer">
             <div className="MoreFiltersContainer">
               <MoreFiltersButton size="normal" />
-              <SortByButton size="normal" setSortOptions={setSortOptions} />
+              <SortByButton size="normal" sortOptions={sortOptions} setSortOptions={setSortOptions} />
             </div>
             <div className="CountryNavFilterInnerContainer">
               <CountryNavFilterButton text="North America" filter={filter} setFilter={setFilter} />
@@ -113,7 +113,7 @@ function CountryNavPage() {
           <div className="CountryNavFilterContainerSmall">
             <div className="MoreFiltersContainerSmall">
               <MoreFiltersButton size="small" />
-              <SortByButton size="small" setSortOptions={setSortOptions} />
+              <SortByButton size="small" sortOptions={sortOptions} setSortOptions={setSortOptions} />
             </div>
             <div className="CountryNavFilterInnerContainerSmall">
               <CountryNavFilterButtonSmall text="North America" filter={filter} setFilter={setFilter} />

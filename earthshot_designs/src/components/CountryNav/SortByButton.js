@@ -13,7 +13,7 @@ function SortByButton({ size, sortOptions, setSortOptions }) {
       <Dropdown.Menu>
         {
           SortOptions.map((sortOption) => {
-            return <Dropdown.Item className={sortOptions === sortOption ? "DropdownItemSelected" : "DropdownItem"} onClick={() => setSortOptions(sortOption)}>{sortOption}</Dropdown.Item>
+            return <Dropdown.Item className={sortOptions === sortOption ? "DropdownItemSelected" : "DropdownItem"} onClick={() => setSortOptions(sortOption)}>{sortOption.name}</Dropdown.Item>
           })
         }
       </Dropdown.Menu>

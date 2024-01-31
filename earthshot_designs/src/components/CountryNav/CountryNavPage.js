@@ -7,6 +7,7 @@ import SortByButton from "./SortByButton";
 import CountryNavCard from "./CountryNavCard";
 import TestDataNavCardCountry from "../../testdata/TestDataNavCardCountry";
 import CountryNavCardRoutes from "../../api/CountryNavCardData";
+import SortOptions from "../../testdata/CountryNavPageSortOptions";
 import { useQuery } from "react-query";
 
 function CountryNavPage() {
@@ -16,9 +17,7 @@ function CountryNavPage() {
     onSuccess: (resData) => {
       let filteredData = resData.data.filter(cardData => !filter ? true : cardData.continent === filter)
       if (sortOptions) {
-        filteredData = filteredData.toSorted((a, b) => {
-          return a["metrics"][sortOptions] - b["metrics"][sortOptions]
-        })
+        filteredData = sortOptions.sortFunction(filteredData)
       }
       setCardData(filteredData)
     }
@@ -27,7 +26,7 @@ function CountryNavPage() {
   const smallScreenSize = 820
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [filter, setFilter] = useState(null)
-  const [sortOptions, setSortOptions] = useState(null)
+  const [sortOptions, setSortOptions] = useState(SortOptions[0])
   const [cardData, setCardData] = useState(null)
 
   useEffect(() => {
@@ -39,9 +38,7 @@ function CountryNavPage() {
       let filteredData = data.data.filter(cardData => !filter ? true : cardData.continent === filter)
 
       if (sortOptions) {
-        filteredData = filteredData.toSorted((a, b) => {
-          return a["metrics"][sortOptions] - b["metrics"][sortOptions]
-        })
+        filteredData = sortOptions.sortFunction(filteredData)
       }
 
       setCardData(filteredData)
@@ -50,9 +47,7 @@ function CountryNavPage() {
 
   useEffect(() => {
     if (data && sortOptions) {
-      setCardData(cardData.toSorted((a, b) => {
-        return a["metrics"][sortOptions] - b["metrics"][sortOptions]
-      }))
+      setCardData(sortOptions.sortFunction(cardData))
     }
   }, [sortOptions])
 

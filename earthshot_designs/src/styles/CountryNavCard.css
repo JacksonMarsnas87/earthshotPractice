@@ -69,6 +69,10 @@
     margin: 5px;
 }
 
+.CountryNavCard:hover {
+    cursor: pointer;
+}
+
 .CountryNavCard:hover > .NavCardCountryImage {
     filter: brightness(0.25)
 }

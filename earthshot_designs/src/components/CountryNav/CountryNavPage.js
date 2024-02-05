@@ -9,6 +9,7 @@ import TestDataNavCardCountry from "../../testdata/TestDataNavCardCountry";
 import CountryNavCardRoutes from "../../api/CountryNavCardData";
 import SortOptions from "../../testdata/CountryNavPageSortOptions";
 import { useQuery } from "react-query";
+import Modal from "./Modal";
 
 function CountryNavPage() {
 
@@ -28,6 +29,8 @@ function CountryNavPage() {
   const [filter, setFilter] = useState(null)
   const [sortOptions, setSortOptions] = useState(SortOptions[0])
   const [cardData, setCardData] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalData, setModalData] = useState(false)
 
   useEffect(() => {
     window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
@@ -60,6 +63,9 @@ function CountryNavPage() {
         windowWidth >= smallScreenSize ?
 
         <div className="CountryNavContainer">
+
+          <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} modalData={modalData} />
+
           <div className="CountryNavHeaderContainer">
             <h1 className="CountryNavHeader">This is the page title!</h1>
             <p className="CountryNavSummary">There are a few metrics used to describe the United Nation’s Least Developed Countries. While every country has its unique challenges, these metrics are common indicators that help may be needed.</p>
@@ -85,7 +91,7 @@ function CountryNavPage() {
               cardData.length ?
 
               cardData.map((navCardData, index) => (
-                <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} ranking={index + 1} />
+                <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} ranking={index + 1} setIsModalOpen={setIsModalOpen} setModalData={setModalData} />
               ))
 
               :

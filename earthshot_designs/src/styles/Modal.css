@@ -9,7 +9,6 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 10;
-    /* position: absolute; */
     position: fixed;
 }
 
@@ -54,7 +53,6 @@
 .ModalImage {
     width: 100%;
     height: 100%;
-    /* position: absolute; */
     top: 0;
     left: 0;
     object-fit: cover;
@@ -63,4 +61,79 @@
     filter: brightness(0.5);
     overflow-clip-margin: content-box;
     overflow: clip;
+}
+
+.ModalContent {
+    position: relative;
+    top: 0;
+    min-height: 100%;
+}
+
+.ModalScroll {
+    position: absolute;
+    top: 0;
+    background-color: #fbfaf8;
+    height: 40px;
+    z-index: 15;
+    cursor: pointer;
+    padding: 11px;
+    display: block;
+    border-right: 1px solid #dddddd;
+    box-sizing: border-box;
+}
+
+.ModalScroll.Disabled {
+    display: none;
+}
+
+.LeftTab {
+    left: 0;
+    box-shadow: -2px -2px 6px rgba(0,0,0,.25);
+}
+
+.RightTab {
+    right: 0;
+    box-shadow: 2px -2px 6px rgba(0,0,0,.25);
+}
+
+.ModalScrollArrow {
+    width: 20px;
+    height: 20px;
+}
+
+.ModalNavTabs {
+    height: 40px;
+    border-bottom: 1px solid #dddddd;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+.ModalTabScroll {
+    white-space: nowrap;
+    height: 56px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.CategoryTab {
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 41px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+.CategoryTab > p {
+    font-size: 1rem;
+}
+
+.CategoryTab:hover {
+    border-bottom: 2px solid #63ceff;
+    color: #63ceff;
 }

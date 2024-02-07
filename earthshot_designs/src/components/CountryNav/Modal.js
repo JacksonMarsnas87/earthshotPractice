@@ -8,6 +8,7 @@ function Modal({ isModalOpen, setIsModalOpen, modalData }) {
   const elementRef = useRef(null);
   const [leftArrowDisable, setLeftArrowDisable] = useState(true);
   const [rightArrowDisable, setRightArrowDisable] = useState(false);
+  const [modalCategory, setModalCategory] = useState("Option 1")
 
   useEffect(() => {
     // Adds an event listener to the nav scroll bar. Whenever the bar scrolls (including during animation startup and end), it checks scroll position and disables scroll buttons if scroll max or min is reached
@@ -62,7 +63,7 @@ function Modal({ isModalOpen, setIsModalOpen, modalData }) {
                     {
                       ModalCategories.map((category) => {
                         return (
-                          <div className="CategoryTab">
+                          <div className={modalCategory === category ? "CategoryTab Selected" : "CategoryTab"} onClick={() => setModalCategory(category)}>
                             <p>{category}</p>
                           </div>
                         )

@@ -2,6 +2,7 @@ import "../../styles/Modal.css"
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import ModalCategories from "../../testdata/ModalCategories";
 import { useEffect, useRef, useState } from "react";
+import ModalContentTable from "./ModalContentTable";
 
 function Modal({ isModalOpen, setIsModalOpen, modalData }) {
 
@@ -36,46 +37,52 @@ function Modal({ isModalOpen, setIsModalOpen, modalData }) {
   return (
     // <div className={ isModalOpen ? "ModalBackground" : "ModalHidden" } onClick={() => setIsModalOpen(false)}>
     <div className={ isModalOpen ? "ModalBackground" : "ModalHidden" }>
-        <div className="ModalBody">
+        <div>
             {
               modalData ?
 
-              <div>
-                <div className="ModalHeaderContainer">
-                  <img className="ModalImage" src={require(`../../images/countryImages/${modalData.imageName}.jpg`)} />
-                  <div className="ModalHeaderTextContainer">
-                    <h1 className="ModalCountryName">{modalData.country}</h1>
-                    <p className="ModalContinentName">{modalData.continent}</p>
+              <div className="ModalBody">
+                <div>
+                  <div className="ModalHeaderContainer">
+                    <img className="ModalImage" src={require(`../../images/countryImages/${modalData.imageName}.jpg`)} />
+                    <div className="ModalHeaderTextContainer">
+                      <h1 className="ModalCountryName">{modalData.country}</h1>
+                      <p className="ModalContinentName">{modalData.continent}</p>
+                    </div>
+                  </div>
+
+                  <div className="ModalNavArrows">
+                    <div className={leftArrowDisable ? "ModalScroll Disabled" : "ModalScroll LeftTab"} onClick={() => elementRef.current.scrollLeft -= 300 }>
+                      <BsChevronLeft className="ModalScrollArrow" />
+                    </div>
+                    <div className={rightArrowDisable ? "ModalScroll Disabled" : "ModalScroll RightTab"} onClick={() => elementRef.current.scrollLeft += 300 }>
+                      <BsChevronRight className="ModalScrollArrow" />
+                    </div>
+                  </div>
+
+                  <div className="ModalNavTabs">
+                    <div className="ModalTabScroll" ref={elementRef}>
+                      {
+                        ModalCategories.map((category) => {
+                          return (
+                            <div className={modalCategory === category ? "CategoryTab Selected" : "CategoryTab"} onClick={() => setModalCategory(category)}>
+                              <p>{category}</p>
+                            </div>
+                          )
+                        })
+                      }
+                    </div>
                   </div>
                 </div>
 
-                <div className="ModalContent">
-                  <div className={leftArrowDisable ? "ModalScroll Disabled" : "ModalScroll LeftTab"} onClick={() => elementRef.current.scrollLeft -= 300 }>
-                    <BsChevronLeft className="ModalScrollArrow" />
-                  </div>
-                  <div className={rightArrowDisable ? "ModalScroll Disabled" : "ModalScroll RightTab"} onClick={() => elementRef.current.scrollLeft += 300 }>
-                    <BsChevronRight className="ModalScrollArrow" />
-                  </div>
-                </div>
-
-                <div className="ModalNavTabs">
-                  <div className="ModalTabScroll" ref={elementRef}>
-                    {
-                      ModalCategories.map((category) => {
-                        return (
-                          <div className={modalCategory === category ? "CategoryTab Selected" : "CategoryTab"} onClick={() => setModalCategory(category)}>
-                            <p>{category}</p>
-                          </div>
-                        )
-                      })
-                    }
-                  </div>
-                </div>
+                <ModalContentTable />
               </div>
 
               :
-
-              <p>No data to display</p>
+              
+              <div className="ModalBody">
+                <p>No data to display</p>
+              </div>
             }
         </div>
     </div>

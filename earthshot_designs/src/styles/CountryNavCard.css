@@ -94,6 +94,10 @@
     width: 40%;
 }
 
+.CountryNavCardMetricBarContainer {
+    width: 60%;
+}
+
 .CountryRank {
     top: 0;
     left: 0;

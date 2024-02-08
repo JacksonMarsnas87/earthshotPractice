@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import ModalContentTable from "./ModalContentTable";
 
 function Modal({ isModalOpen, setIsModalOpen, modalData }) {
-
   const elementRef = useRef(null);
   const [leftArrowDisable, setLeftArrowDisable] = useState(true);
   const [rightArrowDisable, setRightArrowDisable] = useState(false);
@@ -75,7 +74,7 @@ function Modal({ isModalOpen, setIsModalOpen, modalData }) {
                   </div>
                 </div>
 
-                <ModalContentTable />
+                <ModalContentTable countryName={modalData.country} modalCategory={modalCategory} />
               </div>
 
               :

@@ -1,15 +1,27 @@
 import "../../styles/ModalContentTable.css"
 import ModalData from "../../testdata/ModalData";
+import MetricBar from "./MetricBar";
 
-function ModalContentTable() {
+function ModalContentTable({ countryName, modalCategory }) {
   return (
     <table className="ModalContentTable">
         <tbody className="ModalContentTableBody">
             {
-                ModalData["Canada"]["Option 1"].map((data) => (
+                ModalData[countryName][modalCategory].map((data) => (
                     <tr className="ModalTableRow">
                         <td className="ModalRow Name">{data.title}</td>
-                        <td className="ModalRow Value">{data.value}</td>
+
+                        {
+                            data.type === "text" ?
+
+                            <td className="ModalRow TextValue">{data.value}</td>
+
+                            :
+
+                            <td className="ModalRow TextValue">
+                                <MetricBar isSelected={true} fill={data.fill} content={data.value} />
+                            </td>
+                        }
                     </tr>
                 ))
             }

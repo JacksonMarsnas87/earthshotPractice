@@ -77,6 +77,17 @@
     color: rgba(124, 124, 124, 0.75);
 }
 
+.ModalBackgroundOpen {
+    /* display: block; */
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.6);
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
 
 
 /* For small screens */

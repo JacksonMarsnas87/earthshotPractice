@@ -8,7 +8,7 @@ function Modal({ isModalOpen, setIsModalOpen, modalData }) {
   const elementRef = useRef(null);
   const [leftArrowDisable, setLeftArrowDisable] = useState(true);
   const [rightArrowDisable, setRightArrowDisable] = useState(false);
-  const [modalCategory, setModalCategory] = useState("Option 1")
+  const [modalCategory, setModalCategory] = useState("Overview")
 
   useEffect(() => {
     // Adds an event listener to the nav scroll bar. Whenever the bar scrolls (including during animation startup and end), it checks scroll position and disables scroll buttons if scroll max or min is reached
@@ -35,55 +35,53 @@ function Modal({ isModalOpen, setIsModalOpen, modalData }) {
 
   return (
     // <div className={ isModalOpen ? "ModalBackground" : "ModalHidden" } onClick={() => setIsModalOpen(false)}>
-    <div className={ isModalOpen ? "ModalBackground" : "ModalHidden" }>
-        <div>
-            {
-              modalData ?
+    <div className={ isModalOpen ? "ModalOpen" : "ModalHidden" }>
+          {
+            modalData ?
 
-              <div className="ModalBody">
-                <div>
-                  <div className="ModalHeaderContainer">
-                    <img className="ModalImage" src={require(`../../images/countryImages/${modalData.imageName}.jpg`)} />
-                    <div className="ModalHeaderTextContainer">
-                      <h1 className="ModalCountryName">{modalData.country}</h1>
-                      <p className="ModalContinentName">{modalData.continent}</p>
-                    </div>
-                  </div>
-
-                  <div className="ModalNavArrows">
-                    <div className={leftArrowDisable ? "ModalScroll Disabled" : "ModalScroll LeftTab"} onClick={() => elementRef.current.scrollLeft -= 300 }>
-                      <BsChevronLeft className="ModalScrollArrow" />
-                    </div>
-                    <div className={rightArrowDisable ? "ModalScroll Disabled" : "ModalScroll RightTab"} onClick={() => elementRef.current.scrollLeft += 300 }>
-                      <BsChevronRight className="ModalScrollArrow" />
-                    </div>
-                  </div>
-
-                  <div className="ModalNavTabs">
-                    <div className="ModalTabScroll" ref={elementRef}>
-                      {
-                        ModalCategories.map((category) => {
-                          return (
-                            <div className={modalCategory === category ? "CategoryTab Selected" : "CategoryTab"} onClick={() => setModalCategory(category)}>
-                              <p>{category}</p>
-                            </div>
-                          )
-                        })
-                      }
-                    </div>
+            <div className="ModalBody">
+              <div>
+                <div className="ModalHeaderContainer">
+                  <img className="ModalImage" src={require(`../../images/countryImages/${modalData.imageName}.jpg`)} />
+                  <div className="ModalHeaderTextContainer">
+                    <h1 className="ModalCountryName">{modalData.country}</h1>
+                    <p className="ModalContinentName">{modalData.continent}</p>
                   </div>
                 </div>
 
-                <ModalContentTable countryName={modalData.country} modalCategory={modalCategory} />
+                <div className="ModalNavArrows">
+                  <div className={leftArrowDisable ? "ModalScroll Disabled" : "ModalScroll LeftTab"} onClick={() => elementRef.current.scrollLeft -= 300 }>
+                    <BsChevronLeft className="ModalScrollArrow" />
+                  </div>
+                  <div className={rightArrowDisable ? "ModalScroll Disabled" : "ModalScroll RightTab"} onClick={() => elementRef.current.scrollLeft += 300 }>
+                    <BsChevronRight className="ModalScrollArrow" />
+                  </div>
+                </div>
+
+                <div className="ModalNavTabs">
+                  <div className="ModalTabScroll" ref={elementRef}>
+                    {
+                      ModalCategories.map((category) => {
+                        return (
+                          <div className={modalCategory === category ? "CategoryTab Selected" : "CategoryTab"} onClick={() => setModalCategory(category)}>
+                            <p>{category}</p>
+                          </div>
+                        )
+                      })
+                    }
+                  </div>
+                </div>
               </div>
 
-              :
-              
-              <div className="ModalBody">
-                <p>No data to display</p>
-              </div>
-            }
-        </div>
+              <ModalContentTable countryName={modalData.country} modalCategory={modalCategory} />
+            </div>
+
+            :
+            
+            <div className="ModalBody">
+              <p>No data to display</p>
+            </div>
+          }
     </div>
   );
 }

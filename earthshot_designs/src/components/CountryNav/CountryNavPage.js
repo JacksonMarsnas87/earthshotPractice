@@ -65,6 +65,7 @@ function CountryNavPage() {
         <div className="CountryNavContainer">
 
           <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} modalData={modalData} />
+          <div className={isModalOpen ? "ModalBackgroundOpen" : "ModalBackgroundClosed"} onClick={() => setIsModalOpen(false)} />
 
           <div className="CountryNavHeaderContainer">
             <h1 className="CountryNavHeader">This is the page title!</h1>

@@ -18,7 +18,7 @@ function ModalContentTable({ countryName, modalCategory }) {
 
                             :
 
-                            <td className="ModalRow TextValue">
+                            <td className="ModalRow BarValue">
                                 <MetricBar isSelected={true} fill={data.fill} content={data.value} />
                             </td>
                         }

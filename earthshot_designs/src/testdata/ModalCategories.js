@@ -1,6 +1,6 @@
 const ModalCategories = [
-    "Option 1",
-    "Option 2",
+    "Overview",
+    "Food & Agriculture",
     "Option 3",
     "Option 4",
     "Option 5",

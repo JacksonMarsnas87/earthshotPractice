@@ -2,24 +2,34 @@
     display: none;
 }
 
-.ModalBackground {
+.ModalOpen {
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    width: 80%;
+    max-width: 1000px;
+    min-width: 750px;
+    margin-top: 100px;
     z-index: 10;
     position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .ModalBody {
-    width: 700px;
-    height: 700px;
-    margin-top: 100px;
+    max-height: 700px;
     background-color: white;
     z-index: 11;
     border-radius: 12px;
-    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.ModalBody::-webkit-scrollbar {
+    display: none;
+}
+
+.ModalBody {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .ModalHeaderContainer {

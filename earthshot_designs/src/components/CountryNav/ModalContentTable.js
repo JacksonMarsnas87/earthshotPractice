@@ -8,6 +8,8 @@ function ModalContentTable({ countryName, modalCategory }) {
     <table className="ModalContentTable">
         <tbody className="ModalContentTableBody">
             {
+                ModalData[countryName][modalCategory] ?
+
                 ModalData[countryName][modalCategory].map((data) => (
                     <tr className="ModalTableRow">
                         <td className="ModalRow Name">{data.title}</td>
@@ -42,6 +44,14 @@ function ModalContentTable({ countryName, modalCategory }) {
                         }
                     </tr>
                 ))
+
+                :
+
+                <div className="NoContentContainer">
+                    <div className="NoContent">
+                        <p>There is no data to display at this time</p>
+                    </div>
+                </div>
             }
         </tbody>
     </table>

@@ -77,7 +77,8 @@ const ModalData = {
                 "title": "Prevalence of Stunting",
                 "fill": 12.3,
                 "value": "12.3%",
-                "type": "bar"
+                "type": "bar",
+                "colour": "green"
             },
             {
                 "title": "Protein Supply Per Capita",
@@ -89,7 +90,8 @@ const ModalData = {
                 "title": "Prevalence of Wasting",
                 "fill": 7.7,
                 "value": "7.7%",
-                "type": "bar"
+                "type": "bar",
+                "colour": "green"
             },
             {
                 "title": "Dietary Energy Adequacy",
@@ -101,19 +103,22 @@ const ModalData = {
                 "title": "Underweight Population",
                 "fill": 8.7,
                 "value": "8.7%",
-                "type": "bar"
+                "type": "bar",
+                "colour": "green"
             },
             {
                 "title": "Food Waste Percentage",
                 "fill": 15,
                 "value": "15%",
-                "type": "bar"
+                "type": "bar",
+                "colour": "yellow"
             },
             {
                 "title": "Food Insecurity",
                 "fill": 12.1,
                 "value": "12.1%",
-                "type": "bar"
+                "type": "bar",
+                "colour": "yellow"
             },
             {
                 "title": "Agricultural Water Withdrawal",
@@ -125,7 +130,8 @@ const ModalData = {
                 "title": "Nutrient Deficiency",
                 "fill": 11.2,
                 "value": "11.2%",
-                "type": "bar"
+                "type": "bar",
+                "colour": "green"
             },
             {
                 "title": "Fertilizer User/Hectare",
@@ -137,7 +143,8 @@ const ModalData = {
                 "title": "Prevalence of Undernourishment",
                 "fill": 9,
                 "value": "9%",
-                "type": "bar"
+                "type": "bar",
+                "colour": "green"
             },
             {
                 "title": "Crop Land (Hectares)",
@@ -155,7 +162,8 @@ const ModalData = {
                 "title": "Food Expenditure Percentage",
                 "fill": 28.3,
                 "value": "28.3%",
-                "type": "bar"
+                "type": "bar",
+                "colour": "yellow"
             },
             {
                 "title": "Cost of Nutrient Adequacy (CoNA)",
@@ -173,13 +181,15 @@ const ModalData = {
                 "title": "CoNA Percentage of Income",
                 "fill": 3.29,
                 "value": "3.29%",
-                "type": "bar"
+                "type": "bar",
+                "colour": "green"
             },
             {
                 "title": "CoCA Percentage of Income",
                 "fill": 1.93,
                 "value": "1.93%",
-                "type": "bar"
+                "type": "bar",
+                "colour": "green"
             },
             {
                 "title": "Carbohydrates",
@@ -249,9 +259,8 @@ const ModalData = {
             },
             {
                 "title": "What does the average person eat?",
-                "fill": 75,
-                "value": "XYZ",
-                "type": "bar"
+                "type": "menu",
+                "data": "Consists of a variety of staple foods, including rice, noodles, and vegetables. Additionally, meat (such as pork, beef, and chicken) is also commonly consumed, as well as seafood, tofu, and eggs. \n\nA typical macro nutrient breakdown for the average person in China would be as follows: \nCarbohydrates: 55-75% of total caloric intake, providing approximately 45-65% of daily calories \nFat: 15-30% of total caloric intake, providing approximately 20-35% of daily calories\nProtein: 10-15% of total caloric intake, providing approximately 10-15% of daily calories\n----\nCalories: approximately 2000-2500 calories per day\nCarbohydrates: Approximately 55-60% of total caloric intake, or 1100-1500 calories\nProteins: Approximately 15-20% of total caloric intake, or 300-500 calories\nFats: Approximately 25-30% of total caloric intake, or 500-750 calories"
             },
         ]
     },

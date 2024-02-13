@@ -1,14 +1,12 @@
 const ModalCategories = [
     "Overview",
     "Food & Agriculture",
-    "Option 3",
-    "Option 4",
-    "Option 5",
-    "Option 6",
-    "Option 7",
-    "Option 8",
-    "Option 9",
-    "Option 10"
+    "Healthcare",
+    "Water Access and Quality",
+    "Energy",
+    "Affordable Housing",
+    "Environment",
+    "Economic Prosperity"
 ]
 
 export default ModalCategories;

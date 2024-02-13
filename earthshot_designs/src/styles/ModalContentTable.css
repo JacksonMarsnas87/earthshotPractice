@@ -37,3 +37,52 @@
     text-align: right;
     font-weight: 400;
 }
+
+
+
+
+/* The following styles are for the food menu only */
+.FoodMenuButton {
+    width: 100%;
+    font-size: 0.7rem;
+}
+
+.popup-content {
+    margin: auto;
+    background: #f0f0f0;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 0.7rem;
+    white-space: pre-wrap;
+}
+
+.popup-arrow {
+    color: #f0f0f0;
+}
+
+[role='tooltip'].popup-content {
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 8px;
+}
+
+@keyframes anvil {
+    0% {
+        transform: scale(1) translateY(0px);
+        opacity: 0;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0px;
+    }
+    1% {
+        transform: scale(0.96) translateY(10px);
+        opacity: 0;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4px;
+    }
+    100% {
+        transform: scale(1) translateY(0px);
+        opacity: 1;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 8px;
+    }
+}
+
+.popup-content {
+    -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+}

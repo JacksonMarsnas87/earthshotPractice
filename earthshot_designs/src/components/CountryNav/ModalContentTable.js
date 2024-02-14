@@ -3,7 +3,7 @@ import ModalData from "../../testdata/ModalData";
 import MetricBar from "./MetricBar";
 import Popup from 'reactjs-popup';
 
-function ModalContentTable({ countryName, modalCategory }) {
+function ModalContentTable({ countryName, modalCategory, size }) {
   return (
     <table className="ModalContentTable">
         <tbody className="ModalContentTableBody">
@@ -11,7 +11,7 @@ function ModalContentTable({ countryName, modalCategory }) {
                 ModalData[countryName][modalCategory] ?
 
                 ModalData[countryName][modalCategory].map((data) => (
-                    <tr className="ModalTableRow">
+                    <tr className={`ModalTableRow ${size}`}>
                         <td className="ModalRow Name">{data.title}</td>
 
                         {
@@ -32,7 +32,7 @@ function ModalContentTable({ countryName, modalCategory }) {
                             <td className="ModalRow Menu">
                                 <Popup
                                     trigger={<button className="FoodMenuButton">Hover to see common foods</button>}
-                                    position="left bottom"
+                                    position={size === "mobile" ? "top right" : "left bottom"}
                                     on={['hover']}
                                     closeOnDocumentClick
                                 >
@@ -48,7 +48,7 @@ function ModalContentTable({ countryName, modalCategory }) {
                 :
 
                 <div className="NoContentContainer">
-                    <div className="NoContent">
+                    <div className={`NoContent ${size}`}>
                         <p>There is no data to display at this time</p>
                     </div>
                 </div>

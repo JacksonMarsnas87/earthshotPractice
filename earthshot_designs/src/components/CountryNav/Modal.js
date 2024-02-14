@@ -4,7 +4,7 @@ import ModalCategories from "../../testdata/ModalCategories";
 import { useEffect, useRef, useState } from "react";
 import ModalContentTable from "./ModalContentTable";
 
-function Modal({ isModalOpen, setIsModalOpen, modalData }) {
+function Modal({ isModalOpen, setIsModalOpen, modalData, size }) {
   const elementRef = useRef(null);
   const [leftArrowDisable, setLeftArrowDisable] = useState(true);
   const [rightArrowDisable, setRightArrowDisable] = useState(false);
@@ -35,7 +35,7 @@ function Modal({ isModalOpen, setIsModalOpen, modalData }) {
 
   return (
     // <div className={ isModalOpen ? "ModalBackground" : "ModalHidden" } onClick={() => setIsModalOpen(false)}>
-    <div className={ isModalOpen ? "ModalOpen" : "ModalHidden" }>
+    <div className={ isModalOpen ? `ModalOpen ${size}` : "ModalHidden" }>
           {
             modalData ?
 
@@ -50,20 +50,20 @@ function Modal({ isModalOpen, setIsModalOpen, modalData }) {
                 </div>
 
                 <div className="ModalNavArrows">
-                  <div className={leftArrowDisable ? "ModalScroll Disabled" : "ModalScroll LeftTab"} onClick={() => elementRef.current.scrollLeft -= 300 }>
+                  <div className={leftArrowDisable ? "ModalScroll Disabled" : `ModalScroll LeftTab ${size}`} onClick={() => size === "normal" ? elementRef.current.scrollLeft -= 300 : elementRef.current.scrollLeft -= 200 }>
                     <BsChevronLeft className="ModalScrollArrow" />
                   </div>
-                  <div className={rightArrowDisable ? "ModalScroll Disabled" : "ModalScroll RightTab"} onClick={() => elementRef.current.scrollLeft += 300 }>
+                  <div className={rightArrowDisable ? "ModalScroll Disabled" : `ModalScroll RightTab ${size}`} onClick={() => size === "normal" ? elementRef.current.scrollLeft += 300 : elementRef.current.scrollLeft += 200 }>
                     <BsChevronRight className="ModalScrollArrow" />
                   </div>
                 </div>
 
-                <div className="ModalNavTabs">
-                  <div className="ModalTabScroll" ref={elementRef}>
+                <div className={`ModalNavTabs ${size}`}>
+                  <div className={`ModalTabScroll ${size}`} ref={elementRef}>
                     {
                       ModalCategories.map((category) => {
                         return (
-                          <div className={modalCategory === category ? "CategoryTab Selected" : "CategoryTab"} onClick={() => setModalCategory(category)}>
+                          <div className={modalCategory === category ? `CategoryTab Selected ${size}` : `CategoryTab ${size}`} onClick={() => setModalCategory(category)}>
                             <p>{category}</p>
                           </div>
                         )
@@ -73,7 +73,7 @@ function Modal({ isModalOpen, setIsModalOpen, modalData }) {
                 </div>
               </div>
 
-              <ModalContentTable countryName={modalData.country} modalCategory={modalCategory} />
+              <ModalContentTable countryName={modalData.country} modalCategory={modalCategory} size={size} />
             </div>
 
             :

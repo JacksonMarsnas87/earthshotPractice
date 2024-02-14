@@ -25,6 +25,7 @@ function CountryNavPage() {
   })
 
   const smallScreenSize = 820
+  const mobileScreenSize = 500
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [filter, setFilter] = useState(null)
   const [sortOptions, setSortOptions] = useState(SortOptions[0])
@@ -64,7 +65,7 @@ function CountryNavPage() {
 
         <div className="CountryNavContainer">
 
-          <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} modalData={modalData} />
+          <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} modalData={modalData} size={"normal"} />
           <div className={isModalOpen ? "ModalBackgroundOpen" : "ModalBackgroundClosed"} onClick={() => setIsModalOpen(false)} />
 
           <div className="CountryNavHeaderContainer">
@@ -107,6 +108,10 @@ function CountryNavPage() {
         :
 
         <div className="CountryNavContainer">
+
+          <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} modalData={modalData} size={windowWidth > mobileScreenSize ? "small" : "mobile"}  />
+          <div className={isModalOpen ? "ModalBackgroundOpen" : "ModalBackgroundClosed"} onClick={() => setIsModalOpen(false)} />
+
           <div className="CountryNavHeaderContainerSmall">
             <h1 className="CountryNavHeaderSmall">This is the page title!</h1>
             <p className="CountryNavSummarySmall">There are a few metrics used to describe the United Nation’s Least Developed Countries. While every country has its unique challenges, these metrics are common indicators that help may be needed.</p>
@@ -132,7 +137,7 @@ function CountryNavPage() {
               cardData.length ?
 
               cardData.map((navCardData, index) => (
-                <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} ranking={index + 1} />
+                <CountryNavCard country={navCardData.country} continent={navCardData.continent} metrics={navCardData.metrics} imageName={navCardData.imageName} ranking={index + 1} setIsModalOpen={setIsModalOpen} setModalData={setModalData} />
               ))
 
               :

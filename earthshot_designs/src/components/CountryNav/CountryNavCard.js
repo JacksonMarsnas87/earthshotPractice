@@ -2,7 +2,7 @@ import "../../styles/CountryNavCard.css"
 import MetricBar from "./MetricBar";
 import { useState } from "react";
 
-function CountryNavCard({ country, continent, metrics, imageName, ranking, setIsModalOpen, setModalData }) {
+function CountryNavCard({ details, metrics, ranking, setIsModalOpen, setModalData }) {
 
   const [isSelected, setIsSelected] = useState(false)
   
@@ -10,19 +10,20 @@ function CountryNavCard({ country, continent, metrics, imageName, ranking, setIs
     <div className="CountryNavCard" onMouseEnter={() => setIsSelected(true)} onMouseLeave={() => setIsSelected(false)} onClick={() => {
           setIsModalOpen(true)
           setModalData({
-            country: country,
-            continent: continent,
-            imageName: imageName
+            country: details.country,
+            continent: details.continent,
+            imageName: details.imageName,
+            data: details.stats
           })
         }
       }>
         <p className="CountryRank">{ranking}</p>
         <div className="CountryNavCardTextContainer">
-          <h1 className="NavCardCountryName">{country}</h1>
-          <p className="NavCardCountryContinent">{continent}</p>
+          <h1 className="NavCardCountryName">{details.country}</h1>
+          <p className="NavCardCountryContinent">{details.continent}</p>
         </div>
 
-        <img className="NavCardCountryImage" src={require(`../../images/countryImages/${imageName}.jpg`)} />
+        <img className="NavCardCountryImage" src={require(`../../images/countryImages/${details.imageName}.jpg`)} />
         <div className="CountryNavCardMetricContainer">
           <div className="CountryNavCardMetricContainerInner">
             <p className="CountryNavCardMetric">Metric1</p>

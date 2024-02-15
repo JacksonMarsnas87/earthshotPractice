@@ -3,47 +3,53 @@ import ModalData from "../../testdata/ModalData";
 import MetricBar from "./MetricBar";
 import Popup from 'reactjs-popup';
 
-function ModalContentTable({ countryName, modalCategory, size }) {
+function ModalContentTable({ countryName, modalCategory, size, data }) {
+    console.log(data)
   return (
     <table className="ModalContentTable">
         <tbody className="ModalContentTableBody">
             {
-                ModalData[countryName][modalCategory] ?
+                // ModalData[countryName][modalCategory] ?
+                data && data[modalCategory] ?
 
-                ModalData[countryName][modalCategory].map((data) => (
-                    <tr className={`ModalTableRow ${size}`}>
-                        <td className="ModalRow Name">{data.title}</td>
+                // Object.keys(ModalData[countryName][modalCategory]).map((dataTitle) => {
+                Object.keys(data[modalCategory]).map((dataTitle) => {
+                    let newData = data[modalCategory][dataTitle]
+                    return (
+                        <tr className={`ModalTableRow ${size}`}>
+                            <td className="ModalRow Name">{newData.title}</td>
 
-                        {
-                            data.type === "text" ?
+                            {
+                                newData.type === "text" ?
 
-                            <td className="ModalRow TextValue">{data.value}</td>
+                                <td className="ModalRow TextValue">{newData.value}</td>
 
-                            :
+                                :
 
-                            data.type === "bar" ?
+                                newData.type === "bar" ?
 
-                            <td className="ModalRow BarValue">
-                                <MetricBar isSelected={true} fill={data.fill} content={data.value} colour={data.colour ? data.colour : null} />
-                            </td>
+                                <td className="ModalRow BarValue">
+                                    <MetricBar isSelected={true} fill={newData.fill} content={newData.value} colour={newData.colour ? newData.colour : null} />
+                                </td>
 
-                            :
+                                :
 
-                            <td className="ModalRow Menu">
-                                <Popup
-                                    trigger={<button className="FoodMenuButton">Hover to see common foods</button>}
-                                    position={size === "mobile" ? "top right" : "left bottom"}
-                                    on={['hover']}
-                                    closeOnDocumentClick
-                                >
-                                    <span className="FoodMenuText">
-                                        {data.data}
-                                    </span>
-                                </Popup>
-                            </td>
-                        }
-                    </tr>
-                ))
+                                <td className="ModalRow Menu">
+                                    <Popup
+                                        trigger={<button className="FoodMenuButton">Hover to see common foods</button>}
+                                        position={size === "mobile" ? "top right" : "left bottom"}
+                                        on={['hover']}
+                                        closeOnDocumentClick
+                                    >
+                                        <span className="FoodMenuText">
+                                            {newData.data}
+                                        </span>
+                                    </Popup>
+                                </td>
+                            }
+                        </tr>
+                    )
+                })
 
                 :
 

@@ -73,7 +73,7 @@ function Modal({ isModalOpen, setIsModalOpen, modalData, size }) {
                 </div>
               </div>
 
-              <ModalContentTable countryName={modalData.country} modalCategory={modalCategory} size={size} />
+              <ModalContentTable countryName={modalData.country} modalCategory={modalCategory} size={size} data={modalData.data} />
             </div>
 
             :

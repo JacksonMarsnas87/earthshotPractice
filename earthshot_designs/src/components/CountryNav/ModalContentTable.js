@@ -4,7 +4,6 @@ import MetricBar from "./MetricBar";
 import Popup from 'reactjs-popup';
 
 function ModalContentTable({ countryName, modalCategory, size, data }) {
-    console.log(data)
   return (
     <table className="ModalContentTable">
         <tbody className="ModalContentTableBody">

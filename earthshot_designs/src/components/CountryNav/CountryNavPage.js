@@ -29,7 +29,7 @@ function CountryNavPage() {
   const mobileScreenSize = 500
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [filter, setFilter] = useState(null)
-  const [sortOptions, setSortOptions] = useState(SortOptions[0])
+  const [sortOptions, setSortOptions] = useState(SortOptions[1])
   const [cardData, setCardData] = useState(TestDataNavCardCountry)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalData, setModalData] = useState(false)
@@ -42,7 +42,7 @@ function CountryNavPage() {
     // if (data) {
     if (cardData) {
       // let filteredData = data.data.filter(cardData => !filter ? true : cardData.continent === filter)
-      let filteredData = cardData.filter(cardData => !filter ? true : cardData.continent === filter)
+      let filteredData = TestDataNavCardCountry.filter(cardData => !filter ? true : cardData.continent === filter)
 
       if (sortOptions) {
         filteredData = sortOptions.sortFunction(filteredData)

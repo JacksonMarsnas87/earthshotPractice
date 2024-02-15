@@ -13,7 +13,11 @@ function SortByButton({ size, sortOptions, setSortOptions }) {
       <Dropdown.Menu>
         {
           SortOptions.map((sortOption) => {
-            return <Dropdown.Item className={sortOptions === sortOption ? "DropdownItemSelected" : "DropdownItem"} onClick={() => setSortOptions(sortOption)}>{sortOption.name}</Dropdown.Item>
+            if (sortOption["type"] === "sort"){
+              return <Dropdown.Item className={sortOptions === sortOption ? "DropdownItemSelected" : "DropdownItem"} onClick={() => setSortOptions(sortOption)}>{sortOption.name}</Dropdown.Item>
+            } else if (sortOption["type"] === "header") {
+              return <Dropdown.ItemText className="DropdownHeader">{sortOption.name}</Dropdown.ItemText>
+            }
           })
         }
       </Dropdown.Menu>

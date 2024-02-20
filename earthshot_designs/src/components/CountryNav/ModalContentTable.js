@@ -33,6 +33,8 @@ function ModalContentTable({ countryName, modalCategory, size, data }) {
 
                                 :
 
+                                newData.type === "menu" ?
+
                                 <td className="ModalRow Menu">
                                     <Popup
                                         trigger={<button className="FoodMenuButton">Hover to see common foods</button>}
@@ -45,6 +47,11 @@ function ModalContentTable({ countryName, modalCategory, size, data }) {
                                         </span>
                                     </Popup>
                                 </td>
+
+                                :
+                                
+                                // This has to be here because of the ID stored in mongoDB. Object keys are looped over, eventually reaching the ID, which we do NOT want to display
+                                <></>
                             }
                         </tr>
                     )

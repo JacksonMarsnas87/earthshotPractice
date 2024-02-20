@@ -14,23 +14,24 @@ import Modal from "./Modal";
 function CountryNavPage() {
 
   // This must remain commented until database schemas are completed. Use hardcoded data until then
-  // const { isLoading, error, data } = useQuery("countryNavCardData", CountryNavCardRoutes.getCountryNavCardData, { 
-  //   staleTime: 10000,
-  //   onSuccess: (resData) => {
-  //     let filteredData = resData.data.filter(cardData => !filter ? true : cardData.continent === filter)
-  //     if (sortOptions) {
-  //       filteredData = sortOptions.sortFunction(filteredData)
-  //     }
-  //     setCardData(filteredData)
-  //   }
-  // })
+  const { isLoading, error, data } = useQuery("countryNavCardData", CountryNavCardRoutes.getCountryNavCardData, { 
+    staleTime: 10000,
+    onSuccess: (resData) => {
+      let filteredData = resData.data.filter(cardData => !filter ? true : cardData.continent === filter)
+      if (sortOptions) {
+        filteredData = sortOptions.sortFunction(filteredData)
+      }
+      setCardData(filteredData)
+    }
+  })
 
   const smallScreenSize = 820
   const mobileScreenSize = 500
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [filter, setFilter] = useState(null)
   const [sortOptions, setSortOptions] = useState(SortOptions[1])
-  const [cardData, setCardData] = useState(TestDataNavCardCountry)
+  // const [cardData, setCardData] = useState(TestDataNavCardCountry)
+  const [cardData, setCardData] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalData, setModalData] = useState(false)
 
@@ -39,10 +40,10 @@ function CountryNavPage() {
   }, [])
 
   useEffect(() => {
-    // if (data) {
-    if (cardData) {
-      // let filteredData = data.data.filter(cardData => !filter ? true : cardData.continent === filter)
-      let filteredData = TestDataNavCardCountry.filter(cardData => !filter ? true : cardData.continent === filter)
+    if (data) {
+    // if (cardData) {
+      let filteredData = data.data.filter(cardData => !filter ? true : cardData.continent === filter)
+      // let filteredData = TestDataNavCardCountry.filter(cardData => !filter ? true : cardData.continent === filter)
 
       if (sortOptions) {
         filteredData = sortOptions.sortFunction(filteredData)
@@ -53,14 +54,14 @@ function CountryNavPage() {
   }, [filter])
 
   useEffect(() => {
-    // if (data && sortOptions) {
-    if (cardData && sortOptions) {
+    if (data && sortOptions) {
+    // if (cardData && sortOptions) {
       setCardData(sortOptions.sortFunction(cardData))
     }
   }, [sortOptions])
 
-  // if (isLoading) return <h1>Loading...</h1>
-  // if (error) return <h1>An error occurred</h1>
+  if (isLoading) return <h1>Loading...</h1>
+  if (error) return <h1>An error occurred</h1>
 
   return (
     <>

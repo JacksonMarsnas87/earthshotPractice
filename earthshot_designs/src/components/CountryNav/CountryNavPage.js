@@ -10,6 +10,7 @@ import CountryNavCardRoutes from "../../api/CountryNavCardData";
 import SortOptions from "../../testdata/CountryNavPageSortOptions";
 import { useQuery } from "react-query";
 import Modal from "./Modal";
+import FilterOptions from "../../testdata/CountryNavPageFilterFunctions";
 
 function CountryNavPage() {
 
@@ -17,11 +18,15 @@ function CountryNavPage() {
   const { isLoading, error, data } = useQuery("countryNavCardData", CountryNavCardRoutes.getCountryNavCardData, { 
     staleTime: 10000,
     onSuccess: (resData) => {
-      let filteredData = resData.data.filter(cardData => !filter ? true : cardData.continent === filter)
-      if (sortOptions) {
-        filteredData = sortOptions.sortFunction(filteredData)
+      let modifiedData = resData.data
+      if (filter) {
+        // modifiedData = resData.data.filter(cardData => cardData.continent === filter)
+        modifiedData = FilterOptions[filter].filterFunction(modifiedData)
       }
-      setCardData(filteredData)
+      if (sortOptions) {
+        modifiedData = sortOptions.sortFunction(modifiedData)
+      }
+      setCardData(modifiedData)
     }
   })
 
@@ -41,15 +46,18 @@ function CountryNavPage() {
 
   useEffect(() => {
     if (data) {
-    // if (cardData) {
-      let filteredData = data.data.filter(cardData => !filter ? true : cardData.continent === filter)
-      // let filteredData = TestDataNavCardCountry.filter(cardData => !filter ? true : cardData.continent === filter)
+      // let modifiedData = data.data.filter(cardData => !filter ? true : cardData.continent === filter)
+      let modifiedData = data.data
 
-      if (sortOptions) {
-        filteredData = sortOptions.sortFunction(filteredData)
+      if (filter) {
+        modifiedData = FilterOptions[filter].filterFunction(modifiedData)
       }
 
-      setCardData(filteredData)
+      if (sortOptions) {
+        modifiedData = sortOptions.sortFunction(modifiedData)
+      }
+
+      setCardData(modifiedData)
     }
   }, [filter])
 

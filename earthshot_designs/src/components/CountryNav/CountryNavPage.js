@@ -14,13 +14,11 @@ import FilterOptions from "../../testdata/CountryNavPageFilterFunctions";
 
 function CountryNavPage() {
 
-  // This must remain commented until database schemas are completed. Use hardcoded data until then
   const { isLoading, error, data } = useQuery("countryNavCardData", CountryNavCardRoutes.getCountryNavCardData, { 
     staleTime: 10000,
     onSuccess: (resData) => {
       let modifiedData = resData.data
       if (filter) {
-        // modifiedData = resData.data.filter(cardData => cardData.continent === filter)
         modifiedData = FilterOptions[filter].filterFunction(modifiedData)
       }
       if (sortOptions) {
@@ -35,7 +33,6 @@ function CountryNavPage() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [filter, setFilter] = useState(null)
   const [sortOptions, setSortOptions] = useState(SortOptions[1])
-  // const [cardData, setCardData] = useState(TestDataNavCardCountry)
   const [cardData, setCardData] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalData, setModalData] = useState(false)
@@ -46,7 +43,6 @@ function CountryNavPage() {
 
   useEffect(() => {
     if (data) {
-      // let modifiedData = data.data.filter(cardData => !filter ? true : cardData.continent === filter)
       let modifiedData = data.data
 
       if (filter) {
@@ -63,7 +59,6 @@ function CountryNavPage() {
 
   useEffect(() => {
     if (data && sortOptions) {
-    // if (cardData && sortOptions) {
       setCardData(sortOptions.sortFunction(cardData))
     }
   }, [sortOptions])
@@ -78,7 +73,7 @@ function CountryNavPage() {
 
         <div className="CountryNavContainer">
 
-          <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} modalData={modalData} size={"normal"} />
+          <Modal isModalOpen={isModalOpen} modalData={modalData} size={"normal"} />
           <div className={isModalOpen ? "ModalBackgroundOpen" : "ModalBackgroundClosed"} onClick={() => setIsModalOpen(false)} />
 
           <div className="CountryNavHeaderContainer">
@@ -122,7 +117,7 @@ function CountryNavPage() {
 
         <div className="CountryNavContainer">
 
-          <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} modalData={modalData} size={windowWidth > mobileScreenSize ? "small" : "mobile"}  />
+          <Modal isModalOpen={isModalOpen} modalData={modalData} size={windowWidth > mobileScreenSize ? "small" : "mobile"}  />
           <div className={isModalOpen ? "ModalBackgroundOpen" : "ModalBackgroundClosed"} onClick={() => setIsModalOpen(false)} />
 
           <div className="CountryNavHeaderContainerSmall">

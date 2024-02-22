@@ -4,14 +4,13 @@ import ModalCategories from "../../testdata/ModalCategories";
 import { useEffect, useRef, useState } from "react";
 import ModalContentTable from "./ModalContentTable";
 
-function Modal({ isModalOpen, setIsModalOpen, modalData, size }) {
+function Modal({ isModalOpen, modalData, size }) {
   const elementRef = useRef(null);
   const [leftArrowDisable, setLeftArrowDisable] = useState(true);
   const [rightArrowDisable, setRightArrowDisable] = useState(false);
   const [modalCategory, setModalCategory] = useState("Overview")
 
   useEffect(() => {
-    // Adds an event listener to the nav scroll bar. Whenever the bar scrolls (including during animation startup and end), it checks scroll position and disables scroll buttons if scroll max or min is reached
     if (elementRef && elementRef.current) {
       elementRef.current.addEventListener("scroll", () => {
         if (elementRef.current.scrollLeft === 0) {
@@ -34,7 +33,6 @@ function Modal({ isModalOpen, setIsModalOpen, modalData, size }) {
   };
 
   return (
-    // <div className={ isModalOpen ? "ModalBackground" : "ModalHidden" } onClick={() => setIsModalOpen(false)}>
     <div className={ isModalOpen ? `ModalOpen ${size}` : "ModalHidden" }>
           {
             modalData ?

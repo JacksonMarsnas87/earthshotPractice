@@ -8,10 +8,8 @@ function ModalContentTable({ countryName, modalCategory, size, data }) {
     <table className="ModalContentTable">
         <tbody className="ModalContentTableBody">
             {
-                // ModalData[countryName][modalCategory] ?
                 data && data[modalCategory] ?
 
-                // Object.keys(ModalData[countryName][modalCategory]).map((dataTitle) => {
                 Object.keys(data[modalCategory]).map((dataTitle) => {
                     let newData = data[modalCategory][dataTitle]
                     

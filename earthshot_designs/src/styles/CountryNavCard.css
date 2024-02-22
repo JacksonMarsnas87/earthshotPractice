@@ -1,0 +1,113 @@
+.CountryNavCard {
+    width: calc(25% - 28px);
+    height: calc(25vw - 56px);
+    min-width: 250px;
+    min-height: 200px;
+    max-width: 350px;
+    max-height: 300px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: #ffffff;
+    position: relative;
+    /* This looks nice on full rows, but causes a weird strecthing effect on rows that aren't full */
+    flex-grow: 1;
+}
+
+.CountryNavCardTextContainer {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 3;
+    color: white;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.NavCardCountryName {
+    font-size: 26px;
+    display: inline;
+    font-weight: 700;
+}
+
+.NavCardCountryContinent {
+    font-size: 16px;
+    margin-top: 0.2rem;
+    font-weight: 700;
+}
+
+.NavCardCountryImage {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 12px;
+    filter: brightness(0.8) saturate(1.2);
+    object-fit: cover;
+}
+
+.CountryNavCardMetricContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    padding: 10%;
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+.CountryNavCardMetricContainerInner {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin: 5px;
+}
+
+.CountryNavCard:hover {
+    cursor: pointer;
+}
+
+.CountryNavCard:hover > .NavCardCountryImage {
+    filter: brightness(0.25)
+}
+
+.CountryNavCard:hover > .CountryNavCardTextContainer {
+    z-index: 1;
+}
+
+.CountryNavCard:hover > .CountryRank {
+    z-index: 1;
+}
+
+.CountryNavCard:hover > .CountryNavCardMetricContainer {
+    z-index: 3;
+}
+
+.CountryNavCardMetric {
+    font-size: 15px;
+    width: 40%;
+}
+
+.CountryNavCardMetricBarContainer {
+    width: 60%;
+}
+
+.CountryRank {
+    top: 0;
+    left: 0;
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    position: absolute;
+    margin: 1rem;
+    z-index: 3;
+    border-bottom: 2px solid white;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}

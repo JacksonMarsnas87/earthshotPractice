@@ -1,0 +1,224 @@
+.ModalHidden {
+    display: none;
+}
+
+.ModalOpen {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    z-index: 10;
+    position: fixed;
+}
+
+.ModalOpen.normal {
+    width: 80%;
+    max-width: 1000px;
+    min-width: 750px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ModalOpen.small {
+    width: 100%;
+}
+
+.ModalOpen.mobile {
+    width: 100%;
+}
+
+.ModalBody {
+    max-height: 700px;
+    background-color: white;
+    z-index: 11;
+    border-radius: 12px;
+    overflow-y: scroll;
+}
+
+.ModalBody::-webkit-scrollbar {
+    display: none;
+}
+
+.ModalBody {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.ModalHeaderContainer {
+    height: 200px;
+    position: relative;
+}
+
+.ModalHeaderTextContainer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.ModalCountryName {
+    margin: 0;
+    color: white;
+    width: 100%;
+    font-weight: 700;
+}
+
+.ModalContinentName {
+    color: white;
+    width: 50%;
+    font-weight: 500;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+.ModalImage {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.ModalNavArrows {
+    position: relative;
+    top: 0;
+    min-height: 100%;
+}
+
+.ModalScroll {
+    position: absolute;
+    top: 0;
+    background-color: #fbfaf8;
+    z-index: 15;
+    cursor: pointer;
+    display: block;
+    border-right: 1px solid #dddddd;
+    box-sizing: border-box;
+}
+
+.ModalScroll.normal {
+    height: 40px;
+    padding: 10px;
+}
+
+.ModalScroll.small {
+    height: 30px;
+    padding: 5px;
+}
+
+.ModalScroll.mobile {
+    height: 30px;
+    padding: 5px;
+}
+
+.ModalScroll.Disabled {
+    display: none;
+}
+
+.LeftTab {
+    left: 0;
+    box-shadow: -2px -2px 6px rgba(0,0,0,.25);
+}
+
+.RightTab {
+    right: 0;
+    box-shadow: 2px -2px 6px rgba(0,0,0,.25);
+}
+
+.ModalScrollArrow {
+    width: 20px;
+    height: 20px;
+}
+
+.ModalNavTabs {
+    border-bottom: 1px solid #dddddd;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+.ModalNavTabs.normal {
+    height: 40px;
+}
+
+.ModalNavTabs.small {
+    height: 30px;
+}
+
+.ModalNavTabs.mobile {
+    height: 30px;
+}
+
+.ModalTabScroll {
+    white-space: nowrap;
+    height: 56px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.ModalTabScroll.normal {
+    height: 56px;
+
+}
+
+.ModalTabScroll.small {
+    height: 46px;
+}
+
+.ModalTabScroll.mobile {
+    height: 46px;
+}
+
+.CategoryTab {
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+.CategoryTab.normal {
+    font-weight: 700;
+    line-height: 41px;
+}
+
+.CategoryTab.small {
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.CategoryTab.mobile {
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.CategoryTab.normal > p {
+    font-size: 1rem;
+}
+
+.CategoryTab.small > p {
+    font-size: 0.8rem;
+}
+
+.CategoryTab.mobile > p {
+    font-size: 0.8rem;
+}
+
+.CategoryTab:hover {
+    border-bottom: 2px solid #63ceff;
+    color: #63ceff;
+    transition: all .2s ease;
+}
+
+.CategoryTab.Selected {
+    border-bottom: 2px solid #63ceff;
+    color: #63ceff;
+}

@@ -1,0 +1,36 @@
+.MetricBarOutter {
+    background-color: rgba(150, 150, 150, 0.404);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 1.5rem;
+    width: 100%;
+}
+
+.MetricBarInner {
+    background-color: #2bde73;
+    transition: width 0.75s cubic-bezier(0.25, 1, 0.25, 1);
+    height: 100%;
+    text-align: left;
+    padding-left: 0.4rem;
+    box-sizing: border-box;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+}
+
+.MetricBarInner.green {
+    background-color: #2bde73;
+}
+
+.MetricBarInner.yellow {
+    background-color: #ffc924;
+}
+
+.MetricBarInner.red {
+    background-color: #ff4742;
+}
+
+.MetricBarInner.grey {
+    background-color: #808080;
+}

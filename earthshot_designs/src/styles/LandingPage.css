@@ -1,0 +1,301 @@
+.LandingPageBackground {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.LandingHeader {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 600px;
+}
+
+.LandingHeaderPictureSection {
+    display: flex;
+    background-color: #92E5FF;
+    width: 40%;
+    justify-content: center;
+}
+
+.LandingHeaderPicture {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: -100px;
+}
+
+.LandingHeaderTitle {
+    display: flex;
+    background-color: rgb(250, 250, 250);
+    width: 60%;
+    align-items: center;
+}
+
+.LandingHeaderTitleText {
+    font-size: 3.5rem;
+    margin-left: 50px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.LandingHeaderTitleSubText {
+    font-size: 2.5rem;
+    margin-left: 50px;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.LandingAbout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: white;
+    width: 100%;
+}
+
+.LandingAboutTitle {
+    font-size: 2.5rem;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.LandingAboutText {
+    font-size: 1.2rem;
+    max-width: 1200px;
+    margin-top: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.LandingPurpose {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.LandingPurposeText {
+    display: flex;
+    justify-content: right;
+    width: calc(50% + 100px);
+    background-color: rgb(250, 250, 250);
+    padding-left: 5vw;
+    box-sizing: border-box;
+}
+
+.LandingPurposeText > div {
+    width: 100%;
+    max-width: 700px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.LandingPurposePictureSection {
+    background-color: #92E5FF;
+    width: calc(50% - 100px);
+    display: flex;
+    justify-content: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.LandingPurposePictureSection > div {
+    height: 100%;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.LandingPurposeHeader {
+    font-size: 2.5rem;
+    margin: 0px;
+}
+
+.LandingPurposeList {
+    padding-left: 20px;
+    margin-top: 0px;
+}
+
+.LandingPurposeListItem {
+    font-size: 1.2rem;
+    margin-top: 30px;
+}
+
+.LandingPurposeListSubitem {
+    font-size: 1rem;
+}
+
+.LandingPurposePicture {
+    position: absolute;
+    width: 100%;
+    margin-top: 50px;
+    border-radius: 12px;
+}
+
+.LandingCategories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: white;
+    width: 100%;
+}
+
+.LandingCategoriesHeader {
+    font-size: 2.5rem;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.LandingCategoriesText {
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin-top: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.LandingCategoryCardContainer {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin-top: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.LandingFeatures {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 600px;
+}
+
+.LandingFeaturesCategories {
+    display: flex;
+    justify-content: right;
+    width: 50%;
+    background-color: rgb(51, 51, 51);
+    box-sizing: border-box;
+}
+
+.LandingFeaturesCategories > div {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    justify-content: right;
+}
+
+.FadeLeft {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(to right, rgba(51, 51, 51, 1), rgba(51, 51, 51, 0.9) 10%, rgba(51, 51, 51, 0) 35%, rgba(51, 51, 51, 0) 100%)
+}
+
+.LandingFeaturesCountries {
+    display: flex;
+    justify-content: left;
+    width: 50%;
+    background-color: rgb(78, 78, 78);
+    box-sizing: border-box;
+}
+
+.LandingFeaturesCountries > div {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    justify-content: left;
+}
+
+.FadeRight {
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    z-index: 2;
+    background: linear-gradient(to left, rgba(78, 78, 78, 1), rgba(78, 78, 78, 0.9) 10%, rgba(78, 78, 78, 0) 35%, rgba(78, 78, 78, 0) 100%)
+}
+
+.LandingFeaturesTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    padding: 20px 20px 20px 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.LandingFeaturesHeader {
+    color: white;
+    font-size: 2.5rem;
+    margin: 20px 20px 20px 20px;
+}
+
+.LandingFeaturesText {
+    color: white;
+    font-size: 1.2rem;
+    margin: 20px 20px 20px 20px;
+    min-height: 110px;
+}
+
+.LandingFeaturesButtonContainer {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.LandingFeaturesButton {
+    border: 2px solid black;
+    color: white;
+    padding: 16px 15px 16px 15px;
+    border-radius: 10px;
+    margin: 7px;
+    font-size: 1.2rem;
+    background-color: #25CBFF;
+    max-width: 310px;
+    transition: all .2s ease;
+}
+
+.LandingFeaturesButton:hover {
+    border: 2px solid black;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+.LandingFeaturesBackground {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    background-size: cover;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    filter: brightness(0.3) blur(3px);
+}

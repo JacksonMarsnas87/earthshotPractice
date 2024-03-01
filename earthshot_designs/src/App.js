@@ -3,6 +3,7 @@ import Design1 from './components/Design1/Design1';
 import Design2 from './components/ProblemProfile/Design2';
 import NavPage from './components/NavComponents/NavPage';
 import CountryNavPage from './components/CountryNav/CountryNavPage';
+import LandingPage from './components/LandingPage/LandingPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import ResetScroll from './helpers/ResetScroll';
@@ -27,7 +28,8 @@ function App() {
               <Route path="/nav" element={<NavPage />} />
               <Route path="/nav/problemProfile/:problemNumber" element={<Design2 />} />
               <Route path="/nav/design1" element={<Design1 />} />
-              <Route path="/" element={<CountryNavPage />} />
+              <Route path="/countries" element={<CountryNavPage />} />
+              <Route path="/" element={<LandingPage />} />
             </Routes>
           </QueryClientProvider>
         </CategoryContext.Provider>

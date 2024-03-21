@@ -43,7 +43,7 @@ function ProblemCard({ header, title, problemNumber }) {
     }, [])
 
     return (
-        <>
+        <div className="blackBg">
             {
                 countryData && graphData ?
 
@@ -54,7 +54,6 @@ function ProblemCard({ header, title, problemNumber }) {
     
                     <img className="ByCountryImage" src={bycountry} />
     
-                    {/* This should be done by mapping over all of the countryData array. Since we don't have real data right now, it will be hardcoded for now */}
                     <div className="CountryCardContainer">
                         {
                             countryData.map((data) => {
@@ -68,7 +67,7 @@ function ProblemCard({ header, title, problemNumber }) {
     
                 <h1>Loading...</h1>
             }
-        </>
+        </div>
     );
 }
   

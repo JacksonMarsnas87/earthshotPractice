@@ -5,7 +5,6 @@ import CountryNavFilterButtonSmall from "./CountryNavFilterButtonSmall";
 import MoreFiltersButton from "./MoreFiltersButton";
 import SortByButton from "./SortByButton";
 import CountryNavCard from "./CountryNavCard";
-import TestDataNavCardCountry from "../../testdata/TestDataNavCardCountry";
 import CountryNavCardRoutes from "../../api/CountryNavCardData";
 import SortOptions from "../../testdata/CountryNavPageSortOptions";
 import { useQuery } from "react-query";
@@ -77,7 +76,7 @@ function CountryNavPage() {
           <div className={isModalOpen ? "ModalBackgroundOpen" : "ModalBackgroundClosed"} onClick={() => setIsModalOpen(false)} />
 
           <div className="CountryNavHeaderContainer">
-            <h1 className="CountryNavHeader">This is the page title!</h1>
+            <h1 className="CountryNavHeader">View Countries and Their Metrics</h1>
             <p className="CountryNavSummary">There are a few metrics used to describe the United Nation’s Least Developed Countries. While every country has its unique challenges, these metrics are common indicators that help may be needed.</p>
           </div>
 
@@ -121,7 +120,7 @@ function CountryNavPage() {
           <div className={isModalOpen ? "ModalBackgroundOpen" : "ModalBackgroundClosed"} onClick={() => setIsModalOpen(false)} />
 
           <div className="CountryNavHeaderContainerSmall">
-            <h1 className="CountryNavHeaderSmall">This is the page title!</h1>
+            <h1 className="CountryNavHeaderSmall">View Countries and Their Metrics</h1>
             <p className="CountryNavSummarySmall">There are a few metrics used to describe the United Nation’s Least Developed Countries. While every country has its unique challenges, these metrics are common indicators that help may be needed.</p>
           </div>
 
